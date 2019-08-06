@@ -9,24 +9,26 @@
 /* Begin PBXBuildFile section */
 		0DE10E26C865B5A36FE05429 /* Pods_Flurry_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53EA7C64D84C772B10771050 /* Pods_Flurry_Notes.framework */; };
 		1D05866D22E8D5AA00637894 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05866C22E8D5AA00637894 /* AppDelegate.swift */; };
-		1D05866F22E8D5AA00637894 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05866E22E8D5AA00637894 /* ViewController.swift */; };
+		1D05866F22E8D5AA00637894 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05866E22E8D5AA00637894 /* HomeViewController.swift */; };
 		1D05867222E8D5AA00637894 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D05867022E8D5AA00637894 /* Main.storyboard */; };
 		1D05867522E8D5AA00637894 /* Flurry_Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D05867322E8D5AA00637894 /* Flurry_Notes.xcdatamodeld */; };
 		1D05867722E8D5AB00637894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D05867622E8D5AB00637894 /* Assets.xcassets */; };
 		1D05867A22E8D5AB00637894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D05867822E8D5AB00637894 /* LaunchScreen.storyboard */; };
 		1D1B1CFD22F6F5B600B55F62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1B1CFC22F6F5B600B55F62 /* BaseViewController.swift */; };
+		1DFFE2D822F8AB5F00C337F7 /* ApplicationScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFFE2D722F8AB5F00C337F7 /* ApplicationScheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D05866922E8D5AA00637894 /* Flurry Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flurry Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D05866C22E8D5AA00637894 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D05866E22E8D5AA00637894 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1D05866E22E8D5AA00637894 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1D05867122E8D5AA00637894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D05867422E8D5AA00637894 /* Flurry_Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flurry_Notes.xcdatamodel; sourceTree = "<group>"; };
 		1D05867622E8D5AB00637894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D05867922E8D5AB00637894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D05867B22E8D5AB00637894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D1B1CFC22F6F5B600B55F62 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1DFFE2D722F8AB5F00C337F7 /* ApplicationScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationScheme.swift; sourceTree = "<group>"; };
 		237B98732BF9C25A9342F127 /* Pods-Flurry Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flurry Notes.release.xcconfig"; path = "Target Support Files/Pods-Flurry Notes/Pods-Flurry Notes.release.xcconfig"; sourceTree = "<group>"; };
 		3AD3B0A83B206A58554694EE /* Pods-Flurry Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flurry Notes.debug.xcconfig"; path = "Target Support Files/Pods-Flurry Notes/Pods-Flurry Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		53EA7C64D84C772B10771050 /* Pods_Flurry_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flurry_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 		1D05866B22E8D5AA00637894 /* Flurry Notes */ = {
 			isa = PBXGroup;
 			children = (
+				1DFFE2D722F8AB5F00C337F7 /* ApplicationScheme.swift */,
 				1D1B1CFB22F6F53700B55F62 /* model */,
 				1D05866C22E8D5AA00637894 /* AppDelegate.swift */,
 				1D1B1CFA22F6F50700B55F62 /* controller */,
@@ -97,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1D1B1CFC22F6F5B600B55F62 /* BaseViewController.swift */,
-				1D05866E22E8D5AA00637894 /* ViewController.swift */,
+				1D05866E22E8D5AA00637894 /* HomeViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -235,7 +238,8 @@
 			files = (
 				1D05867522E8D5AA00637894 /* Flurry_Notes.xcdatamodeld in Sources */,
 				1D1B1CFD22F6F5B600B55F62 /* BaseViewController.swift in Sources */,
-				1D05866F22E8D5AA00637894 /* ViewController.swift in Sources */,
+				1D05866F22E8D5AA00637894 /* HomeViewController.swift in Sources */,
+				1DFFE2D822F8AB5F00C337F7 /* ApplicationScheme.swift in Sources */,
 				1D05866D22E8D5AA00637894 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
