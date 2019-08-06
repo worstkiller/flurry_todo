@@ -7,35 +7,31 @@
 //
 
 import UIKit
-import MaterialComponents.MaterialBottomAppBar
-import MaterialComponents.MaterialBottomAppBar_ColorThemer
-import MaterialComponents.MaterialColorScheme
-import MaterialComponents.MaterialNavigationDrawer
-import MaterialComponents.MaterialNavigationDrawer_ColorThemer
+
+import MaterialComponents
 
 class HomeViewController: UICollectionViewController {
-
+    var shouldDisplayLogin = false
     var appBarViewController = MDCAppBarViewController()
-    let bottomAppBar = MDCBottomAppBarView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //this will tint the status bar color to given color
-        //like network, time, battery icons
         self.view.tintColor = .black
-        self.view?.backgroundColor = .red
-        self.collectionView?.backgroundColor = .clear
+        self.view.backgroundColor = .white
         
+        self.collectionView?.backgroundColor = .white
+        
+        // AppBar Init
         self.addChild(self.appBarViewController)
         self.view.addSubview(self.appBarViewController.view)
         self.appBarViewController.didMove(toParent: self)
         
-        //     Set the tracking scroll view.
+        // Set the tracking scroll view.
         self.appBarViewController.headerView.trackingScrollView = self.collectionView
         
         // Setup Navigation Items
-        let menuItemImage = UIImage(named: "MenuItem")
+        let menuItemImage = UIImage(named: "navigation")
         let templatedMenuItemImage = menuItemImage?.withRenderingMode(.alwaysTemplate)
         let menuItem = UIBarButtonItem(image: templatedMenuItemImage,
                                        style: .plain,
@@ -43,16 +39,16 @@ class HomeViewController: UICollectionViewController {
                                        action: #selector(menuItemTapped(sender:)))
         self.navigationItem.leftBarButtonItem = menuItem
         
-        //color scheme
-        MDCAppBarColorThemer.applyColorScheme(ApplicationScheme.shared.colorScheme,
-                                              to:self.appBarViewController)
-        
-        MDCAppBarTypographyThemer.applyTypographyScheme(ApplicationScheme.shared.typographyScheme,
-                                                        to: self.appBarViewController)
-    }
-    
-    @objc func menuItemTapped(sender: Any) {
-        print("Bottom navigation items clicked")
+        // TODO: Theme our interface with our colors
+        self.view.backgroundColor = ApplicationScheme.shared.colorScheme
+            .surfaceColor
+        self.collectionView?.backgroundColor = ApplicationScheme.shared.colorScheme
+            .surfaceColor
+        MDCAppBarColorThemer.applyColorScheme(ApplicationScheme.shared.colorScheme
+            , to:self.appBarViewController)
+        // TODO: Theme our interface with our typography
+        MDCAppBarTypographyThemer.applyTypographyScheme(ApplicationScheme.shared.typographyScheme
+            , to: self.appBarViewController)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,10 +61,44 @@ class HomeViewController: UICollectionViewController {
             let itemSize = CGSize(width: itemDimension, height: itemDimension)
             flowLayout.itemSize = itemSize
         }
-
+        
+        if (self.shouldDisplayLogin) {
+            let loginViewController = BaseViewController(nibName: nil, bundle: nil)
+            self.present(loginViewController, animated: false, completion: nil)
+            self.shouldDisplayLogin = false
+        }
     }
-
+    
+    //MARK - Methods
+    @objc func menuItemTapped(sender: Any) {
+//        let loginViewController = LoginViewController(nibName: nil, bundle: nil)
+//        self.present(loginViewController, animated: true, completion: nil)
+    }
+    
+//    MARK - UICollectionViewDataSource
+    override func collectionView(_ collectionView: UICollectionView,
+                                 numberOfItemsInSection section: Int) -> Int {
+        let count = Catalog.count
+        return count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "ProductCell",
+                                                            for: indexPath) as! ProductCell
+        let product = Catalog.productAtIndex(index: indexPath.row)
+        cell.imageView.image = UIImage(named: product.imageName)
+        cell.nameLabel.text = product.productName
+        cell.priceLabel.text = product.price
+        return cell
+    }
+    
 }
+
+//MARK: - UIScrollViewDelegate
+
+// The following four methods must be forwarded to the tracking scroll view in order to implement
+// the Flexible Header's behavior.
 
 extension HomeViewController {
     
@@ -100,6 +130,6 @@ extension HomeViewController {
             headerView.trackingScrollWillEndDragging(withVelocity: velocity,
                                                      targetContentOffset: targetContentOffset)
         }
-}
-
+    }
+    
 }
