@@ -43,11 +43,12 @@ class HomeViewController: UICollectionViewController {
         MDCAppBarTypographyThemer.applyTypographyScheme(ApplicationScheme.shared.typographyScheme
             , to: self.appBarViewController)
         
-        self.appBarViewController.view.backgroundColor = .white
-        self.appBarViewController.headerStackView.backgroundColor = .white
+        self.appBarViewController.view.backgroundColor = ApplicationScheme.shared.colorScheme
+            .surfaceColor
+        self.appBarViewController.headerStackView.backgroundColor = ApplicationScheme.shared.colorScheme
+            .surfaceColor
         self.appBarViewController.headerView.tintColor = .black
     
-       
     }
     
     override func viewDidAppear(_ animated: Bool) {

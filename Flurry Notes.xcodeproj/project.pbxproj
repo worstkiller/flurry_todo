@@ -17,9 +17,9 @@
 		1DB3D28822F9F2DE0048DC12 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28522F9F2DE0048DC12 /* Rubik-Medium.ttf */; };
 		1DB3D28922F9F2DE0048DC12 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28622F9F2DE0048DC12 /* Rubik-Regular.ttf */; };
 		1DB3D28A22F9F2DE0048DC12 /* Rubik-OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28722F9F2DE0048DC12 /* Rubik-OFL.txt */; };
-		1DB3D28C22FA006E0048DC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28B22FA006E0048DC12 /* Assets.xcassets */; };
 		1DB8CD3722F9E36600D50270 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8CD3622F9E36600D50270 /* ProductCell.swift */; };
 		1DB8CD3922F9E3EC00D50270 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8CD3822F9E3EC00D50270 /* Catalog.swift */; };
+		1DC3062622FB590100B0D51A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC3062522FB590100B0D51A /* Assets.xcassets */; };
 		1DFFE2D822F8AB5F00C337F7 /* ApplicationScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFFE2D722F8AB5F00C337F7 /* ApplicationScheme.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +35,9 @@
 		1DB3D28522F9F2DE0048DC12 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		1DB3D28622F9F2DE0048DC12 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		1DB3D28722F9F2DE0048DC12 /* Rubik-OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Rubik-OFL.txt"; sourceTree = "<group>"; };
-		1DB3D28B22FA006E0048DC12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets/Assets.xcassets; sourceTree = "<group>"; };
 		1DB8CD3622F9E36600D50270 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		1DB8CD3822F9E3EC00D50270 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		1DC3062522FB590100B0D51A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		1DFFE2D722F8AB5F00C337F7 /* ApplicationScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationScheme.swift; sourceTree = "<group>"; };
 		237B98732BF9C25A9342F127 /* Pods-Flurry Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flurry Notes.release.xcconfig"; path = "Target Support Files/Pods-Flurry Notes/Pods-Flurry Notes.release.xcconfig"; sourceTree = "<group>"; };
 		3AD3B0A83B206A58554694EE /* Pods-Flurry Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flurry Notes.debug.xcconfig"; path = "Target Support Files/Pods-Flurry Notes/Pods-Flurry Notes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,8 +94,8 @@
 				1D05867B22E8D5AB00637894 /* Info.plist */,
 				1D05867322E8D5AA00637894 /* Flurry_Notes.xcdatamodeld */,
 				1DB8CD3622F9E36600D50270 /* ProductCell.swift */,
+				1DC3062522FB590100B0D51A /* Assets.xcassets */,
 				1DB3D28422F9F2DE0048DC12 /* Fonts */,
-				1DB3D28B22FA006E0048DC12 /* Assets.xcassets */,
 			);
 			path = "Flurry Notes";
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 				1DB3D28A22F9F2DE0048DC12 /* Rubik-OFL.txt in Resources */,
 				1D05867222E8D5AA00637894 /* Main.storyboard in Resources */,
 				1DB3D28922F9F2DE0048DC12 /* Rubik-Regular.ttf in Resources */,
-				1DB3D28C22FA006E0048DC12 /* Assets.xcassets in Resources */,
+				1DC3062622FB590100B0D51A /* Assets.xcassets in Resources */,
 				1DB3D28822F9F2DE0048DC12 /* Rubik-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

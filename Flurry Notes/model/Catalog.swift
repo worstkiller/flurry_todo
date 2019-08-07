@@ -32,13 +32,13 @@ class Catalog: NSObject {
     
     private static let products = [
         Product(imageName: "document", productName: "All", price: "12 Tasks", category: "Accessories", isFeatured:true),
-        Product(imageName: "document", productName: "Work", price: "1 Tasks", category: "Accessories", isFeatured:true),
-        Product(imageName: "document", productName: "Music", price: "120 Tasks", category: "Accessories", isFeatured:false),
-        Product(imageName: "document", productName: "Travel", price: "98 Tasks", category: "Accessories", isFeatured:true),
-        Product(imageName: "document", productName: "Study", price: "34 Tasks", category: "Accessories", isFeatured:false),
-        Product(imageName: "document", productName: "Home", price: "90 Tasks", category: "Accessories", isFeatured:false),
-         Product(imageName: "document", productName: "Drawing", price: "55 Tasks", category: "Accessories", isFeatured:false),
-          Product(imageName: "document", productName: "Shopping", price: "89 Tasks", category: "Accessories", isFeatured:false),
+        Product(imageName: "work", productName: "Work", price: "1 Tasks", category: "Accessories", isFeatured:true),
+        Product(imageName: "music", productName: "Music", price: "120 Tasks", category: "Accessories", isFeatured:false),
+        Product(imageName: "travel", productName: "Travel", price: "98 Tasks", category: "Accessories", isFeatured:true),
+        Product(imageName: "study", productName: "Study", price: "34 Tasks", category: "Accessories", isFeatured:false),
+        Product(imageName: "home", productName: "Home", price: "90 Tasks", category: "Accessories", isFeatured:false),
+         Product(imageName: "drawing", productName: "Drawing", price: "55 Tasks", category: "Accessories", isFeatured:false),
+          Product(imageName: "shopping", productName: "Shopping", price: "89 Tasks", category: "Accessories", isFeatured:false),
     ]
     
     private static var filteredProducts: [Product] = products
