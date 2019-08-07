@@ -49,16 +49,18 @@
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="jMZ-eO-eMr" firstAttribute="top" secondItem="JQH-lj-OqZ" secondAttribute="bottom" constant="4" id="6f0-cf-wGx"/>
-                                    <constraint firstAttribute="bottom" secondItem="jMZ-eO-eMr" secondAttribute="bottom" constant="8" id="CPk-7R-PLN"/>
-                                    <constraint firstItem="jMZ-eO-eMr" firstAttribute="leading" secondItem="Yuw-hU-hyp" secondAttribute="leading" constant="8" id="CY2-MS-GjP"/>
-                                    <constraint firstAttribute="trailing" secondItem="jMZ-eO-eMr" secondAttribute="trailing" constant="8" id="MMm-vk-qr6"/>
-                                    <constraint firstItem="Gol-am-Feg" firstAttribute="leading" secondItem="Yuw-hU-hyp" secondAttribute="leading" id="SXN-bJ-f5M"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gol-am-Feg" secondAttribute="trailing" priority="750" constant="150" id="WWQ-Xo-wFh"/>
-                                    <constraint firstItem="JQH-lj-OqZ" firstAttribute="top" secondItem="Gol-am-Feg" secondAttribute="bottom" constant="4" id="a7F-aa-eEq"/>
-                                    <constraint firstItem="Gol-am-Feg" firstAttribute="top" secondItem="Yuw-hU-hyp" secondAttribute="top" id="h2V-AP-cAy"/>
-                                    <constraint firstItem="JQH-lj-OqZ" firstAttribute="leading" secondItem="Yuw-hU-hyp" secondAttribute="leading" constant="8" id="lbF-d4-LOD"/>
-                                    <constraint firstAttribute="trailing" secondItem="JQH-lj-OqZ" secondAttribute="trailing" constant="8" id="sAf-kg-h4f"/>
+                                    <constraint firstItem="jMZ-eO-eMr" firstAttribute="top" secondItem="JQH-lj-OqZ" secondAttribute="bottom" constant="30" id="6f0-cf-wGx"/>
+                                    <constraint firstAttribute="bottom" secondItem="jMZ-eO-eMr" secondAttribute="bottom" constant="20" id="CPk-7R-PLN"/>
+                                    <constraint firstItem="jMZ-eO-eMr" firstAttribute="leading" secondItem="Yuw-hU-hyp" secondAttribute="leading" constant="20" id="CY2-MS-GjP"/>
+                                    <constraint firstItem="jMZ-eO-eMr" firstAttribute="top" secondItem="JQH-lj-OqZ" secondAttribute="bottom" id="Jn5-6X-OZ3"/>
+                                    <constraint firstAttribute="trailing" secondItem="jMZ-eO-eMr" secondAttribute="trailing" constant="16" id="MMm-vk-qr6"/>
+                                    <constraint firstItem="Gol-am-Feg" firstAttribute="leading" secondItem="Yuw-hU-hyp" secondAttribute="leading" constant="16" id="SXN-bJ-f5M"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gol-am-Feg" secondAttribute="trailing" priority="750" constant="130" id="WWQ-Xo-wFh"/>
+                                    <constraint firstItem="JQH-lj-OqZ" firstAttribute="top" secondItem="Gol-am-Feg" secondAttribute="bottom" constant="50" id="a7F-aa-eEq"/>
+                                    <constraint firstItem="jMZ-eO-eMr" firstAttribute="centerX" secondItem="Yuw-hU-hyp" secondAttribute="centerX" id="bhr-ah-DwW"/>
+                                    <constraint firstItem="Gol-am-Feg" firstAttribute="top" secondItem="Yuw-hU-hyp" secondAttribute="top" constant="25" id="h2V-AP-cAy"/>
+                                    <constraint firstItem="JQH-lj-OqZ" firstAttribute="leading" secondItem="Yuw-hU-hyp" secondAttribute="leading" constant="20" id="lbF-d4-LOD"/>
+                                    <constraint firstAttribute="trailing" secondItem="JQH-lj-OqZ" secondAttribute="trailing" constant="16" id="sAf-kg-h4f"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="Gol-am-Feg" id="Vph-KU-RCv"/>

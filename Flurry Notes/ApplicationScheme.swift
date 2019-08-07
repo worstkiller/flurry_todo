@@ -29,25 +29,25 @@ class ApplicationScheme: NSObject {
     public let colorScheme: MDCColorScheming = {
         let scheme = MDCSemanticColorScheme(defaults: .material201804)
         scheme.primaryColor =
-            UIColor(red: 252.0/255.0, green: 184.0/255.0, blue: 171.0/255.0, alpha: 1.0)
+            UIColor(red: 85.0/255.0, green: 132.0/255.0, blue: 253.0/255.0, alpha: 1.0)
         scheme.primaryColorVariant =
-            UIColor(red: 68.0/255.0, green: 44.0/255.0, blue: 46.0/255.0, alpha: 1.0)
+            UIColor(red: 85.0/255.0, green: 132.0/255.0, blue: 253.0/255.0, alpha: 1.0)
         scheme.onPrimaryColor =
             UIColor(red: 68.0/255.0, green: 44.0/255.0, blue: 46.0/255.0, alpha: 1.0)
         scheme.secondaryColor =
-            UIColor(red: 254.0/255.0, green: 234.0/255.0, blue: 230.0/255.0, alpha: 1.0)
+            UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         scheme.onSecondaryColor =
             UIColor(red: 68.0/255.0, green: 44.0/255.0, blue: 46.0/255.0, alpha: 1.0)
         scheme.surfaceColor =
-            UIColor(red: 255.0/255.0, green: 251.0/255.0, blue: 250.0/255.0, alpha: 1.0)
+            UIColor(red: 253.0/255.0, green: 253.0/255.0, blue: 253.0/255.0, alpha: 1.0)
         scheme.onSurfaceColor =
-            UIColor(red: 68.0/255.0, green: 44.0/255.0, blue: 46.0/255.0, alpha: 1.0)
+            UIColor(red: 253.0/255.0, green: 253.0/255.0, blue: 253.0/255.0, alpha: 1.0)
         scheme.backgroundColor =
-            UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+            UIColor(red: 253.0/255.0, green: 253.0/255.0, blue: 253.0/255.0, alpha: 1.0)
         scheme.onBackgroundColor =
-            UIColor(red: 68.0/255.0, green: 44.0/255.0, blue: 46.0/255.0, alpha: 1.0)
+            UIColor(red: 253.0/255.0, green: 253.0/255.0, blue: 253.0/255.0, alpha: 1.0)
         scheme.errorColor =
-            UIColor(red: 197.0/255.0, green: 3.0/255.0, blue: 43.0/255.0, alpha: 1.0)
+            UIColor(red: 255.0/255.0, green: 137.0/255.0, blue: 168.0/255.0, alpha: 1.0)
         return scheme
     }()
     

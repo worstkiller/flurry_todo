@@ -25,6 +25,8 @@ class ProductCell: MDCCardCollectionCell {
         self.priceLabel.font = ApplicationScheme.shared.typographyScheme.subtitle1
         self.nameLabel.textAlignment = .left
         self.priceLabel.textAlignment = .left
+        self.nameLabel.font = self.nameLabel.font.withSize(30)
+         self.priceLabel.font = self.priceLabel.font.withSize(18)
         //TODO: Set to 0 to disable the curved corners
         self.cornerRadius = 4.0;
         self.setShadowElevation(ShadowElevation(rawValue: 6), for: .normal)

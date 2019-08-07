@@ -13,12 +13,14 @@ import MaterialComponents
 class HomeViewController: UICollectionViewController {
     var shouldDisplayLogin = false
     var appBarViewController = MDCAppBarViewController()
+    var appBarBottomController  = MDCBottomAppBarView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.tintColor = .black
+        self.view.tintColor = .white
         self.view.backgroundColor = .white
+         self.title = "Flurry"
         
         self.collectionView?.backgroundColor = .white
         
@@ -30,25 +32,22 @@ class HomeViewController: UICollectionViewController {
         // Set the tracking scroll view.
         self.appBarViewController.headerView.trackingScrollView = self.collectionView
         
-        // Setup Navigation Items
-        let menuItemImage = UIImage(named: "navigation")
-        let templatedMenuItemImage = menuItemImage?.withRenderingMode(.alwaysTemplate)
-        let menuItem = UIBarButtonItem(image: templatedMenuItemImage,
-                                       style: .plain,
-                                       target: self,
-                                       action: #selector(menuItemTapped(sender:)))
-        self.navigationItem.leftBarButtonItem = menuItem
-        
         // TODO: Theme our interface with our colors
         self.view.backgroundColor = ApplicationScheme.shared.colorScheme
             .surfaceColor
         self.collectionView?.backgroundColor = ApplicationScheme.shared.colorScheme
             .surfaceColor
-        MDCAppBarColorThemer.applyColorScheme(ApplicationScheme.shared.colorScheme
-            , to:self.appBarViewController)
+//        MDCAppBarColorThemer.applyColorScheme(ApplicationScheme.shared.colorScheme
+//            , to:self.appBarViewController)
         // TODO: Theme our interface with our typography
         MDCAppBarTypographyThemer.applyTypographyScheme(ApplicationScheme.shared.typographyScheme
             , to: self.appBarViewController)
+        
+        self.appBarViewController.view.backgroundColor = .white
+        self.appBarViewController.headerStackView.backgroundColor = .white
+        self.appBarViewController.headerView.tintColor = .black
+    
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,6 +89,8 @@ class HomeViewController: UICollectionViewController {
         cell.imageView.image = UIImage(named: product.imageName)
         cell.nameLabel.text = product.productName
         cell.priceLabel.text = product.price
+        collectionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: collectionView.frame.height + 20.0)
+        collectionView.layoutIfNeeded()
         return cell
     }
     
