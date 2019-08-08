@@ -48,6 +48,27 @@ class HomeViewController: UICollectionViewController {
         self.appBarViewController.headerStackView.backgroundColor = ApplicationScheme.shared.colorScheme
             .surfaceColor
         self.appBarViewController.headerView.tintColor = .black
+        
+        //Define Layout here
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        //Get device width
+        let width = UIScreen.main.bounds.width
+        
+        //set section inset as per your requirement.
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        
+        //set cell item size here
+        layout.itemSize = CGSize(width: (width / 2)-16, height: (width / 2)-16)
+        
+        //set Minimum spacing between 2 items
+        layout.minimumInteritemSpacing = 16
+        
+        //set minimum vertical line spacing here between two lines in collectionview
+        layout.minimumLineSpacing = 20
+        
+        //apply defined layout to collectionview
+        collectionView!.collectionViewLayout = layout
     
     }
     
