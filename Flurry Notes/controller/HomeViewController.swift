@@ -13,7 +13,6 @@ import MaterialComponents
 class HomeViewController: UICollectionViewController {
     var shouldDisplayLogin = false
     var appBarViewController = MDCAppBarViewController()
-    var appBarBottomController  = MDCBottomAppBarView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

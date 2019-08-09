@@ -33,11 +33,11 @@ class ApplicationScheme: NSObject {
         scheme.primaryColorVariant =
             UIColor(red: 85.0/255.0, green: 132.0/255.0, blue: 253.0/255.0, alpha: 1.0)
         scheme.onPrimaryColor =
-            UIColor(red: 68.0/255.0, green: 44.0/255.0, blue: 46.0/255.0, alpha: 1.0)
+            UIColor(red: 85.0/255.0, green: 132.0/255.0, blue: 253.0/255.0 ,alpha: 1.0)
         scheme.secondaryColor =
-            UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+            UIColor(red: 85.0/255.0, green: 132.0/255.0, blue: 253.0/255.0,  alpha: 1.0)
         scheme.onSecondaryColor =
-            UIColor(red: 68.0/255.0, green: 44.0/255.0, blue: 46.0/255.0, alpha: 1.0)
+            UIColor(red: 85.0/255.0, green: 132.0/255.0, blue: 253.0/255.0, alpha: 1.0)
         scheme.surfaceColor =
             UIColor(red: 248/255.0, green: 248/255.0, blue: 248/255.0, alpha: 1.0)
         scheme.onSurfaceColor =
