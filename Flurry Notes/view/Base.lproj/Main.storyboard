@@ -17,16 +17,6 @@
                     <view key="view" contentMode="scaleToFill" id="KY3-kM-aHI" customClass="Det">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rq2-Br-vCx">
-                                <rect key="frame" x="151" y="426" width="112" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.35368130069999998" blue="0.37800468380000002" alpha="0.90462698060000002" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.3738512396812439" green="0.51205933094024658" blue="0.96082931756973267" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="zvJ-EC-ait"/>
                     </view>

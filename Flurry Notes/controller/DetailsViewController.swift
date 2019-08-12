@@ -16,11 +16,17 @@ class DetailsViewController: UIViewController {
         let appBar = MDCNavigationBar()
         appBar.backgroundColor = ApplicationScheme.shared.colorScheme.primaryColor
         let backImg = UIImage(named: "back")
-        let backButton = UIBarButtonItem(image: backImg!,
-                                         style: .plain,
-                                         target: self, action: #selector(backPressed(sender:)))
+        let backButton = UIBarButtonItem(image: backImg!,style: .plain,target: self, action: #selector(backPressed(sender:)))
         appBar.backItem = backButton
         return appBar
+    }()
+    
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false;
+        scrollView.backgroundColor = ApplicationScheme.shared.colorScheme.primaryColor
+        scrollView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        return scrollView
     }()
 
     override func viewDidLoad() {
@@ -31,12 +37,20 @@ class DetailsViewController: UIViewController {
     }
     
     private func assembleViews(){
-        self.view.addSubview(navigationBar)
+        
+        //added the scrollview with safe bounds
+        view.addSubview(scrollView)
+        self.scrollView.snp.makeConstraints{make -> Void in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview()
+        }
+        self.scrollView.addSubview(navigationBar)
         self.navigationBar.snp.makeConstraints{ make -> Void in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            
+            make.top.equalTo(scrollView.snp.top)
+            make.left.equalTo(scrollView.snp.left)
+            make.right.equalTo(scrollView.snp.right)
         }
     }
     
