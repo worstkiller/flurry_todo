@@ -115,6 +115,13 @@ class HomeViewController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "2")
+                self.present(newViewController, animated: true, completion: nil)
+        print("index is \(indexPath.row)")
+    }
+    
 }
 
 //MARK: - UIScrollViewDelegate
