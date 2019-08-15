@@ -53,7 +53,9 @@ class ApplicationScheme: NSObject {
     
     public let typographyScheme: MDCTypographyScheming = {
         let scheme = MDCTypographyScheme()
-        let fontName = "Rubik"
+        let fontName = "Rubik-Regular"
+        let fontNameMedium = "Rubik-Medium"
+        scheme.headline3 = UIFont(name: fontNameMedium, size: 40)!
         scheme.headline5 = UIFont(name: fontName, size: 24)!
         scheme.headline6 = UIFont(name: fontName, size: 20)!
         scheme.subtitle1 = UIFont(name: fontName, size: 16)!
