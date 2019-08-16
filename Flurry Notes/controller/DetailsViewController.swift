@@ -84,6 +84,9 @@ class DetailsViewController: UIViewController {
         titleLabel.font = font
         return titleLabel
     }()
+    
+    //tasks list viewcontroller
+    let tasksController = DetailsViewTasksController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,6 +135,16 @@ class DetailsViewController: UIViewController {
             make.top.equalTo(self.titleLabel.snp.bottom)
             make.leftMargin.equalTo(40)
         }
+        
+        //tasks controller
+//        self.view.addSubview(tasksController.view)
+//        self.tasksController.view.snp.makeConstraints{make -> Void in
+////            make.left.equalToSuperview()
+////            make.right.equalToSuperview()
+//            make.top.equalTo(captionLabel.snp.bottom)
+//            make.bottom.equalToSuperview()
+//            make.topMargin.equalTo(50)
+//        }
     }
     
     @objc func backPressed(sender:Any?){
