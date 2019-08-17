@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VGZ-ch-tEz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AMa-rs-lR8">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,10 +14,26 @@
         <scene sceneID="pQT-um-igj">
             <objects>
                 <viewController storyboardIdentifier="2" id="WZt-Qm-L4Y" customClass="DetailsViewController" customModule="Flurry_Notes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KY3-kM-aHI" customClass="Det">
+                    <view key="view" contentMode="scaleToFill" id="KY3-kM-aHI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qd-8H-yTf">
+                                <rect key="frame" x="0.0" y="384" width="414" height="512"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9Qd-8H-yTf" secondAttribute="height" multiplier="207:256" id="7ab-7P-Z2B"/>
+                                </constraints>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" red="0.3738512396812439" green="0.51205933094024658" blue="0.96082931756973267" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="9Qd-8H-yTf" firstAttribute="centerX" secondItem="KY3-kM-aHI" secondAttribute="centerX" id="1gf-DB-veO"/>
+                            <constraint firstAttribute="bottom" secondItem="9Qd-8H-yTf" secondAttribute="bottom" id="74s-nu-vIi"/>
+                            <constraint firstItem="9Qd-8H-yTf" firstAttribute="centerY" secondItem="KY3-kM-aHI" secondAttribute="centerY" id="Fmd-In-Kgz"/>
+                            <constraint firstItem="9Qd-8H-yTf" firstAttribute="trailing" secondItem="zvJ-EC-ait" secondAttribute="trailing" id="LHA-gy-1dd"/>
+                            <constraint firstItem="9Qd-8H-yTf" firstAttribute="top" secondItem="zvJ-EC-ait" secondAttribute="top" constant="340" id="YcO-eb-lQU"/>
+                            <constraint firstItem="9Qd-8H-yTf" firstAttribute="leading" secondItem="zvJ-EC-ait" secondAttribute="leading" id="Z5K-5d-RHp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zvJ-EC-ait"/>
                     </view>
                 </viewController>
@@ -25,30 +41,30 @@
             </objects>
             <point key="canvasLocation" x="234.78260869565219" y="-1191.2946428571429"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="3kx-w5-E6v">
+        <!--Details View Tasks Controller-->
+        <scene sceneID="hdf-17-BWc">
             <objects>
-                <collectionViewController id="AJ6-um-up2" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZJs-fn-7wA">
+                <collectionViewController id="AMa-rs-lR8" customClass="DetailsViewTasksController" customModule="Flurry_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vbf-hR-PiV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xJG-qY-7Tw">
-                            <size key="itemSize" width="402" height="153"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dW5-qx-jPK">
+                            <size key="itemSize" width="414" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" reuseIdentifier="TasksCell" id="bD6-2d-DRY">
-                                <rect key="frame" x="6" y="0.0" width="402" height="153"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TasksCell" id="CNb-jf-ifr" customClass="TasksCell" customModule="Flurry_Notes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="402" height="153"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0w-KU-FyM">
-                                            <rect key="frame" x="180" y="66" width="39" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kue-RR-HVt">
+                                            <rect key="frame" x="186" y="15" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -56,17 +72,20 @@
                                         </label>
                                     </subviews>
                                 </view>
+                                <connections>
+                                    <outlet property="title" destination="kue-RR-HVt" id="KhY-Rm-vzL"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="AJ6-um-up2" id="6sY-IB-hYH"/>
-                            <outlet property="delegate" destination="AJ6-um-up2" id="ccJ-WM-ASF"/>
+                            <outlet property="dataSource" destination="AMa-rs-lR8" id="E1t-5Z-2CQ"/>
+                            <outlet property="delegate" destination="AMa-rs-lR8" id="NPg-Mx-9kc"/>
                         </connections>
                     </collectionView>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2zU-RX-Zst" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bx-d3-F5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1163.768115942029" y="-1195.3125"/>
+            <point key="canvasLocation" x="1891.304347826087" y="-1291.0714285714284"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="un5-j0-XBA">
@@ -168,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6w-ay-9l0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136" y="-552"/>
+            <point key="canvasLocation" x="1946" y="-431"/>
         </scene>
     </scenes>
     <resources>

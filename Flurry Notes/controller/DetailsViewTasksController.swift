@@ -8,11 +8,10 @@
 
 import UIKit
 
-class DetailsViewTasksController: UICollectionViewController {
-    
+class DetailsViewTasksController: UICollectionViewController{
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
     }
     
     override func collectionView(_ collectionView: UICollectionView,
@@ -25,6 +24,8 @@ class DetailsViewTasksController: UICollectionViewController {
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "TasksCell",
                                                             for: indexPath) as! TasksCell
+        cell.title.text = "vikas"
         return cell
     }
+    
 }

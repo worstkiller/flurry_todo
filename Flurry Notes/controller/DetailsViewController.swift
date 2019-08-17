@@ -84,18 +84,18 @@ class DetailsViewController: UIViewController {
         titleLabel.font = font
         return titleLabel
     }()
-    
-    //tasks list viewcontroller
-    let tasksController = DetailsViewTasksController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        assembleViews()
+        let layout = UICollectionViewFlowLayout()
+        let tasksController = DetailsViewTasksController(collectionViewLayout: layout)
+        tasksController.view.backgroundColor = ApplicationScheme.shared.colorScheme.backgroundColor
+        assembleViews(controller: tasksController)
     }
     
-    private func assembleViews(){
+    private func assembleViews(controller: DetailsViewTasksController){
         
         //added the scrollview with safe bounds
         view.addSubview(scrollView)
@@ -135,16 +135,6 @@ class DetailsViewController: UIViewController {
             make.top.equalTo(self.titleLabel.snp.bottom)
             make.leftMargin.equalTo(40)
         }
-        
-        //tasks controller
-//        self.view.addSubview(tasksController.view)
-//        self.tasksController.view.snp.makeConstraints{make -> Void in
-////            make.left.equalToSuperview()
-////            make.right.equalToSuperview()
-//            make.top.equalTo(captionLabel.snp.bottom)
-//            make.bottom.equalToSuperview()
-//            make.topMargin.equalTo(50)
-//        }
     }
     
     @objc func backPressed(sender:Any?){

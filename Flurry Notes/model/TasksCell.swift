@@ -11,6 +11,8 @@ import MaterialComponents
 
 class TasksCell: UICollectionViewCell{
     
+    @IBOutlet weak var title: UILabel!
+    
     func configureCell() {
         self.backgroundColor = .white
     }
