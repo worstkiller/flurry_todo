@@ -9,7 +9,7 @@
 import UIKit
 import MaterialComponents
 
-class TasksCell: UICollectionViewCell{
+class TasksCell: MDCCardCollectionCell{
     
     @IBOutlet weak var title: UILabel!
     

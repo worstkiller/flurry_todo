@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AMa-rs-lR8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VGZ-ch-tEz">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,19 +20,30 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qd-8H-yTf">
                                 <rect key="frame" x="0.0" y="384" width="414" height="512"/>
+                                <color key="backgroundColor" red="1" green="0.35368130069999998" blue="0.37800468380000002" alpha="0.90462698060000002" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Qd-8H-yTf" secondAttribute="height" multiplier="207:256" id="7ab-7P-Z2B"/>
+                                    <constraint firstAttribute="width" secondItem="9Qd-8H-yTf" secondAttribute="height" multiplier="207:256" id="Zrq-Qf-23F"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="AMa-rs-lR8" kind="embed" id="VBo-0P-fOD"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.3738512396812439" green="0.51205933094024658" blue="0.96082931756973267" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="9Qd-8H-yTf" firstAttribute="centerX" secondItem="KY3-kM-aHI" secondAttribute="centerX" id="1gf-DB-veO"/>
                             <constraint firstAttribute="bottom" secondItem="9Qd-8H-yTf" secondAttribute="bottom" id="74s-nu-vIi"/>
+                            <constraint firstItem="9Qd-8H-yTf" firstAttribute="trailing" secondItem="zvJ-EC-ait" secondAttribute="trailing" id="BWE-Ua-xsh"/>
                             <constraint firstItem="9Qd-8H-yTf" firstAttribute="centerY" secondItem="KY3-kM-aHI" secondAttribute="centerY" id="Fmd-In-Kgz"/>
+                            <constraint firstItem="9Qd-8H-yTf" firstAttribute="centerY" secondItem="KY3-kM-aHI" secondAttribute="centerY" id="JQz-s6-qFg"/>
                             <constraint firstItem="9Qd-8H-yTf" firstAttribute="trailing" secondItem="zvJ-EC-ait" secondAttribute="trailing" id="LHA-gy-1dd"/>
+                            <constraint firstAttribute="bottom" secondItem="9Qd-8H-yTf" secondAttribute="bottom" id="QRn-6T-xeM"/>
+                            <constraint firstItem="9Qd-8H-yTf" firstAttribute="top" secondItem="zvJ-EC-ait" secondAttribute="top" constant="340" id="SDn-DH-Efd"/>
                             <constraint firstItem="9Qd-8H-yTf" firstAttribute="top" secondItem="zvJ-EC-ait" secondAttribute="top" constant="340" id="YcO-eb-lQU"/>
+                            <constraint firstItem="9Qd-8H-yTf" firstAttribute="centerX" secondItem="KY3-kM-aHI" secondAttribute="centerX" id="Z53-ac-o2Y"/>
                             <constraint firstItem="9Qd-8H-yTf" firstAttribute="leading" secondItem="zvJ-EC-ait" secondAttribute="leading" id="Z5K-5d-RHp"/>
+                            <constraint firstItem="9Qd-8H-yTf" firstAttribute="leading" secondItem="zvJ-EC-ait" secondAttribute="leading" id="xdb-8y-fTu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zvJ-EC-ait"/>
                     </view>
@@ -46,7 +57,7 @@
             <objects>
                 <collectionViewController id="AMa-rs-lR8" customClass="DetailsViewTasksController" customModule="Flurry_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vbf-hR-PiV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="512"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dW5-qx-jPK">
@@ -85,7 +96,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Bx-d3-F5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1891.304347826087" y="-1291.0714285714284"/>
+            <point key="canvasLocation" x="1077" y="-1191"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="un5-j0-XBA">
@@ -187,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6w-ay-9l0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="-431"/>
+            <point key="canvasLocation" x="1077" y="-431"/>
         </scene>
     </scenes>
     <resources>

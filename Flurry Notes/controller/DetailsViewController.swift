@@ -87,30 +87,18 @@ class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        let layout = UICollectionViewFlowLayout()
-        let tasksController = DetailsViewTasksController(collectionViewLayout: layout)
-        tasksController.view.backgroundColor = ApplicationScheme.shared.colorScheme.backgroundColor
-        assembleViews(controller: tasksController)
+        assembleViews()
     }
     
-    private func assembleViews(controller: DetailsViewTasksController){
-        
-        //added the scrollview with safe bounds
-        view.addSubview(scrollView)
-        self.scrollView.snp.makeConstraints{make -> Void in
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.bottom.equalToSuperview()
-        }
+    private func assembleViews(){
+
         //navigation bar
         self.view.addSubview(navigationBar)
         self.navigationBar.snp.makeConstraints{ make -> Void in
-            make.top.equalTo(scrollView.snp.top)
-            make.left.equalTo(scrollView.snp.left)
-            make.right.equalTo(scrollView.snp.right)
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
+            make.left.equalTo(self.view.safeAreaLayoutGuide)
+            make.right.equalTo(self.view.safeAreaLayoutGuide)
         }
         
         //category image view
