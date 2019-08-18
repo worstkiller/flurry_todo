@@ -18,12 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qd-8H-yTf">
+                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qd-8H-yTf">
                                 <rect key="frame" x="0.0" y="384" width="414" height="512"/>
-                                <color key="backgroundColor" red="1" green="0.35368130069999998" blue="0.37800468380000002" alpha="0.90462698060000002" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Qd-8H-yTf" secondAttribute="height" multiplier="207:256" id="7ab-7P-Z2B"/>
-                                    <constraint firstAttribute="width" secondItem="9Qd-8H-yTf" secondAttribute="height" multiplier="207:256" id="Zrq-Qf-23F"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="AMa-rs-lR8" kind="embed" id="VBo-0P-fOD"/>

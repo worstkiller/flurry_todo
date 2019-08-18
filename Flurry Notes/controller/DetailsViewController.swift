@@ -12,6 +12,8 @@ import SnapKit
 
 class DetailsViewController: UIViewController {
     
+
+    
     let navigationBar : MDCNavigationBar = {
         let appBar = MDCNavigationBar()
         appBar.backgroundColor = ApplicationScheme.shared.colorScheme.primaryColor
@@ -84,6 +86,13 @@ class DetailsViewController: UIViewController {
         titleLabel.font = font
         return titleLabel
     }()
+    
+    //tasks background image
+    let taskBackground : UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "tasks_background"))
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +113,7 @@ class DetailsViewController: UIViewController {
         //category image view
         self.view.addSubview(imageCategoryView)
         self.imageCategoryView.snp.makeConstraints{make->Void in
-            make.top.equalTo(self.navigationBar.snp.bottom).offset(60)
+            make.top.equalTo(self.navigationBar.snp.bottom).offset(50)
             make.leftMargin.equalTo(40)
             make.height.equalTo(70)
             make.width.equalTo(70)
@@ -123,6 +132,18 @@ class DetailsViewController: UIViewController {
             make.top.equalTo(self.titleLabel.snp.bottom)
             make.leftMargin.equalTo(40)
         }
+        
+        //adding the background for tasks
+        self.view.addSubview(taskBackground)
+        self.taskBackground.snp.makeConstraints{make -> Void in
+            make.top.equalTo(captionLabel).offset(60)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     @objc func backPressed(sender:Any?){
