@@ -23,6 +23,7 @@
 		1DC3062622FB590100B0D51A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC3062522FB590100B0D51A /* Assets.xcassets */; };
 		1DE018AC2305787F0062ED46 /* DetailsViewTasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE018AB2305787F0062ED46 /* DetailsViewTasksController.swift */; };
 		1DE018AE23057F980062ED46 /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE018AD23057F980062ED46 /* TasksCell.swift */; };
+		1DF3829F230960AE00D4E380 /* TasksHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3829E230960AE00D4E380 /* TasksHeaderCell.swift */; };
 		1DFFE2D822F8AB5F00C337F7 /* ApplicationScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFFE2D722F8AB5F00C337F7 /* ApplicationScheme.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		1DC3062522FB590100B0D51A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		1DE018AB2305787F0062ED46 /* DetailsViewTasksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewTasksController.swift; sourceTree = "<group>"; };
 		1DE018AD23057F980062ED46 /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
+		1DF3829E230960AE00D4E380 /* TasksHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksHeaderCell.swift; sourceTree = "<group>"; };
 		1DFFE2D722F8AB5F00C337F7 /* ApplicationScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationScheme.swift; sourceTree = "<group>"; };
 		237B98732BF9C25A9342F127 /* Pods-Flurry Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flurry Notes.release.xcconfig"; path = "Target Support Files/Pods-Flurry Notes/Pods-Flurry Notes.release.xcconfig"; sourceTree = "<group>"; };
 		3AD3B0A83B206A58554694EE /* Pods-Flurry Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flurry Notes.debug.xcconfig"; path = "Target Support Files/Pods-Flurry Notes/Pods-Flurry Notes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				1DB8CD3622F9E36600D50270 /* ProductCell.swift */,
 				1DE018AD23057F980062ED46 /* TasksCell.swift */,
 				1DB8CD3822F9E3EC00D50270 /* Catalog.swift */,
+				1DF3829E230960AE00D4E380 /* TasksHeaderCell.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				1D4CFEF022FEACF200B43B1E /* DetailsViewController.swift in Sources */,
 				1DB8CD3722F9E36600D50270 /* ProductCell.swift in Sources */,
 				1DB8CD3922F9E3EC00D50270 /* Catalog.swift in Sources */,
+				1DF3829F230960AE00D4E380 /* TasksHeaderCell.swift in Sources */,
 				1DFFE2D822F8AB5F00C337F7 /* ApplicationScheme.swift in Sources */,
 				1DE018AC2305787F0062ED46 /* DetailsViewTasksController.swift in Sources */,
 				1D05866D22E8D5AA00637894 /* AppDelegate.swift in Sources */,

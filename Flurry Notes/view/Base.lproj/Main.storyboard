@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Details View Controller-->
         <scene sceneID="pQT-um-igj">
@@ -59,33 +64,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dW5-qx-jPK">
-                            <size key="itemSize" width="414" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="itemSize" width="414" height="75"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TasksCell" id="CNb-jf-ifr" customClass="TasksCell" customModule="Flurry_Notes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="TasksCell" id="CNb-jf-ifr" customClass="TasksCell" customModule="Flurry_Notes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kue-RR-HVt">
-                                            <rect key="frame" x="186" y="15" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Max" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kue-RR-HVt">
+                                            <rect key="frame" x="40" y="10" width="76.5" height="24"/>
+                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="20:15 - April 19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H2-8R-phL">
+                                            <rect key="frame" x="40" y="40" width="117" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="9H2-8R-phL" firstAttribute="top" secondItem="kue-RR-HVt" secondAttribute="bottom" constant="6" id="4sz-1n-c9T"/>
+                                    <constraint firstItem="9H2-8R-phL" firstAttribute="leading" secondItem="CNb-jf-ifr" secondAttribute="leading" constant="40" id="EHO-Z7-0CN"/>
+                                    <constraint firstItem="kue-RR-HVt" firstAttribute="top" secondItem="CNb-jf-ifr" secondAttribute="top" constant="10" id="UwD-Hp-HMR"/>
+                                    <constraint firstItem="kue-RR-HVt" firstAttribute="leading" secondItem="CNb-jf-ifr" secondAttribute="leading" constant="40" id="jLB-0Z-CY3"/>
+                                    <constraint firstAttribute="bottom" secondItem="9H2-8R-phL" secondAttribute="bottom" constant="16" id="jxI-HA-gHe"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="dateTime" destination="9H2-8R-phL" id="efo-SR-gKi"/>
                                     <outlet property="title" destination="kue-RR-HVt" id="KhY-Rm-vzL"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="TasksHeaderCell" id="OFc-0W-k6W" customClass="TasksHeaderCell" customModule="Flurry_Notes" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd7-hv-esj">
+                                    <rect key="frame" x="40" y="16" width="44" height="19"/>
+                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="hd7-hv-esj" firstAttribute="top" secondItem="OFc-0W-k6W" secondAttribute="top" constant="16" id="4V5-yx-9LA"/>
+                                <constraint firstItem="hd7-hv-esj" firstAttribute="leading" secondItem="OFc-0W-k6W" secondAttribute="leading" constant="40" id="eEN-qW-9L8"/>
+                                <constraint firstAttribute="bottom" secondItem="hd7-hv-esj" secondAttribute="bottom" constant="15" id="ebZ-0b-jZ6"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="headerLabel" destination="hd7-hv-esj" id="SCZ-kB-0p1"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="AMa-rs-lR8" id="E1t-5Z-2CQ"/>
                             <outlet property="delegate" destination="AMa-rs-lR8" id="NPg-Mx-9kc"/>
@@ -94,7 +131,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Bx-d3-F5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077" y="-1191"/>
+            <point key="canvasLocation" x="1076.8115942028987" y="-1191.2946428571429"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="un5-j0-XBA">

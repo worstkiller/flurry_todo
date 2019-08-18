@@ -25,7 +25,17 @@ class DetailsViewTasksController: UICollectionViewController{
         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "TasksCell",
                                                             for: indexPath) as! TasksCell
         cell.title.text = "vikas"
+        cell.dateTime.text = "20:15 April 29"
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TasksHeaderCell", for: indexPath) as? TasksHeaderCell{
+            sectionHeader.headerLabel.text = "Today"
+            return sectionHeader
+        }
+        return UICollectionReusableView()
     }
     
 }

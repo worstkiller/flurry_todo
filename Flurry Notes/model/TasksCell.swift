@@ -12,6 +12,7 @@ import MaterialComponents
 class TasksCell: MDCCardCollectionCell{
     
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var dateTime: UILabel!
     
     func configureCell() {
         self.backgroundColor = .white
