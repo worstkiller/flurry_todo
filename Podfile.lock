@@ -1,4 +1,5 @@
 PODS:
+  - BEMCheckBox (1.4.1)
   - MaterialComponents (85.12.0):
     - MaterialComponents/ActionSheet (= 85.12.0)
     - "MaterialComponents/ActionSheet+Theming (= 85.12.0)"
@@ -637,11 +638,13 @@ PODS:
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
+  - BEMCheckBox
   - MaterialComponents
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BEMCheckBox
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -651,6 +654,7 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   MaterialComponents: 2faa36425ad1cdeca6a2595efe4cf48fce3618c7
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
@@ -659,6 +663,6 @@ SPEC CHECKSUMS:
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: b3f598450ad4909f385bbe17d88ca31becf41dd0
+PODFILE CHECKSUM: 8a49ded2a007531083fa9b3bd87cc5598422254d
 
 COCOAPODS: 1.7.5

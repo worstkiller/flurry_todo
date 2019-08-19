@@ -8,11 +8,14 @@
 
 import UIKit
 import MaterialComponents
+import SnapKit
+import BEMCheckBox
 
 class TasksCell: MDCCardCollectionCell{
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var dateTime: UILabel!
+    @IBOutlet weak var isCompleted: BEMCheckBox!
     
     func configureCell() {
         self.backgroundColor = .white

@@ -16,7 +16,7 @@ class DetailsViewTasksController: UICollectionViewController{
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        let count = 2
+        let count = 3
         return count
     }
     
@@ -24,15 +24,25 @@ class DetailsViewTasksController: UICollectionViewController{
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "TasksCell",
                                                             for: indexPath) as! TasksCell
-        cell.title.text = "vikas"
+        cell.title.text = "Call Max"
         cell.dateTime.text = "20:15 April 29"
+        cell.isCompleted.boxType = .square
         return cell
+    }
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TasksHeaderCell", for: indexPath) as? TasksHeaderCell{
-            sectionHeader.headerLabel.text = "Today"
+            if indexPath.row%2==0 {
+                sectionHeader.headerLabel.text = "Done"
+            }else{
+                sectionHeader.headerLabel.text = "Today"
+            }
+            print("index row is \(indexPath.row)")
             return sectionHeader
         }
         return UICollectionReusableView()

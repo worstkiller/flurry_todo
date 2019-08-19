@@ -8,4 +8,5 @@ target 'Flurry Notes' do
   # Pods for Flurry Notes
     pod 'MaterialComponents'
     pod 'SnapKit', '~> 5.0.0'
+    pod 'BEMCheckBox'
 end

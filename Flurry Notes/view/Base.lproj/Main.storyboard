@@ -64,41 +64,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dW5-qx-jPK">
-                            <size key="itemSize" width="414" height="75"/>
+                            <size key="itemSize" width="414" height="80"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="TasksCell" id="CNb-jf-ifr" customClass="TasksCell" customModule="Flurry_Notes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Max" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kue-RR-HVt">
-                                            <rect key="frame" x="40" y="10" width="76.5" height="24"/>
-                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                                            <rect key="frame" x="40" y="10" width="88" height="27.5"/>
+                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="23"/>
+                                            <color key="textColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="20:15 - April 19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H2-8R-phL">
-                                            <rect key="frame" x="40" y="40" width="117" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="20:15 - April 19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H2-8R-phL">
+                                            <rect key="frame" x="40" y="45.5" width="123" height="21.5"/>
+                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                            <color key="textColor" red="0.30196078430000001" green="0.30588235289999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ju-y9-IjA" customClass="BEMCheckBox">
+                                            <rect key="frame" x="344" y="20" width="25" height="25"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
+                                                    <color key="value" red="0.3738512397" green="0.5120593309" blue="0.96082931760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                    <color key="value" red="0.65490196079999996" green="0.6705882353" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="9H2-8R-phL" firstAttribute="top" secondItem="kue-RR-HVt" secondAttribute="bottom" constant="6" id="4sz-1n-c9T"/>
+                                    <constraint firstItem="9H2-8R-phL" firstAttribute="top" secondItem="kue-RR-HVt" secondAttribute="bottom" constant="8" id="4sz-1n-c9T"/>
                                     <constraint firstItem="9H2-8R-phL" firstAttribute="leading" secondItem="CNb-jf-ifr" secondAttribute="leading" constant="40" id="EHO-Z7-0CN"/>
+                                    <constraint firstAttribute="trailing" secondItem="4ju-y9-IjA" secondAttribute="trailing" constant="40" id="GNE-qu-AOV"/>
                                     <constraint firstItem="kue-RR-HVt" firstAttribute="top" secondItem="CNb-jf-ifr" secondAttribute="top" constant="10" id="UwD-Hp-HMR"/>
                                     <constraint firstItem="kue-RR-HVt" firstAttribute="leading" secondItem="CNb-jf-ifr" secondAttribute="leading" constant="40" id="jLB-0Z-CY3"/>
                                     <constraint firstAttribute="bottom" secondItem="9H2-8R-phL" secondAttribute="bottom" constant="16" id="jxI-HA-gHe"/>
+                                    <constraint firstAttribute="bottom" secondItem="4ju-y9-IjA" secondAttribute="bottom" constant="25" id="q3f-Vj-AKe"/>
+                                    <constraint firstItem="4ju-y9-IjA" firstAttribute="top" secondItem="CNb-jf-ifr" secondAttribute="top" constant="25" id="t4Y-Z9-Luz"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dateTime" destination="9H2-8R-phL" id="efo-SR-gKi"/>
+                                    <outlet property="isCompleted" destination="4ju-y9-IjA" id="7Xf-SF-akj"/>
                                     <outlet property="title" destination="kue-RR-HVt" id="KhY-Rm-vzL"/>
                                 </connections>
                             </collectionViewCell>
@@ -110,7 +127,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd7-hv-esj">
                                     <rect key="frame" x="40" y="16" width="44" height="19"/>
                                     <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
-                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" red="0.65490196079999996" green="0.6705882353" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
