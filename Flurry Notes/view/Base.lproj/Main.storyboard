@@ -84,8 +84,8 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="20:15 - April 19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H2-8R-phL">
-                                            <rect key="frame" x="40" y="45.5" width="123" height="21.5"/>
-                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                            <rect key="frame" x="40" y="45.5" width="115" height="22"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                             <color key="textColor" red="0.30196078430000001" green="0.30588235289999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
