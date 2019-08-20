@@ -22,9 +22,17 @@ class BaseViewController: UIViewController {
         MDCFloatingButtonColorThemer.applySemanticColorScheme(ApplicationScheme.shared.colorScheme, to: button)
         button.setImageTintColor(.white, for: .normal)
         button.tintColorDidChange()
+        button.addTarget(self, action: #selector(openCreateTaskController(sender:)),for: .touchUpInside)
         
         //adding views to parent
          assembleViews(button)
+    }
+    
+    //open create tasks controller
+    @objc func openCreateTaskController(sender: Any?){
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "CreateTasksViewController")
+        self.present(newViewController, animated: true,completion: nil)
     }
     
     func assembleViews(_ button: MDCFloatingButton){

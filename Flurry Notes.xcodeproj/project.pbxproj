@@ -14,6 +14,7 @@
 		1D05867522E8D5AA00637894 /* Flurry_Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D05867322E8D5AA00637894 /* Flurry_Notes.xcdatamodeld */; };
 		1D05867A22E8D5AB00637894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D05867822E8D5AB00637894 /* LaunchScreen.storyboard */; };
 		1D1B1CFD22F6F5B600B55F62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1B1CFC22F6F5B600B55F62 /* BaseViewController.swift */; };
+		1D391249230C65F600AB6757 /* CreateTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D391248230C65F600AB6757 /* CreateTasksViewController.swift */; };
 		1D4CFEF022FEACF200B43B1E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */; };
 		1DAF50C0230B0BCB00E8791A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF50BF230B0BCB00E8791A /* Assets.xcassets */; };
 		1DB3D28822F9F2DE0048DC12 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28522F9F2DE0048DC12 /* Rubik-Medium.ttf */; };
@@ -36,6 +37,7 @@
 		1D05867922E8D5AB00637894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D05867B22E8D5AB00637894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D1B1CFC22F6F5B600B55F62 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1D391248230C65F600AB6757 /* CreateTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTasksViewController.swift; sourceTree = "<group>"; };
 		1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		1DAF50BF230B0BCB00E8791A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DB3D28522F9F2DE0048DC12 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				1D05866E22E8D5AA00637894 /* HomeViewController.swift */,
 				1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */,
 				1DE018AB2305787F0062ED46 /* DetailsViewTasksController.swift */,
+				1D391248230C65F600AB6757 /* CreateTasksViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				1D05867522E8D5AA00637894 /* Flurry_Notes.xcdatamodeld in Sources */,
 				1D1B1CFD22F6F5B600B55F62 /* BaseViewController.swift in Sources */,
 				1DE018AE23057F980062ED46 /* TasksCell.swift in Sources */,
+				1D391249230C65F600AB6757 /* CreateTasksViewController.swift in Sources */,
 				1D05866F22E8D5AA00637894 /* HomeViewController.swift in Sources */,
 				1D4CFEF022FEACF200B43B1E /* DetailsViewController.swift in Sources */,
 				1DB8CD3722F9E36600D50270 /* ProductCell.swift in Sources */,
