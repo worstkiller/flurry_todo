@@ -41,13 +41,54 @@ class CreateTasksViewController: UIViewController {
         let usernameTextField = MDCMultilineTextField()
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         usernameTextField.clearButtonMode = .unlessEditing;
-        usernameTextField.minimumLines = 6
+        usernameTextField.minimumLines = 8
         return usernameTextField
     }()
     
+    let alarmImage : UIImageView = {
+        let image = UIImage(named: "alarm")
+        let imageView = UIImageView(image: image)
+        return imageView
+    }()
+    
+    let alarmLabel : UILabel = {
+        let font = ApplicationScheme.shared.typographyScheme.headline6
+       let uiLabel = UILabel()
+        uiLabel.text = "20:14  April 24"
+        uiLabel.font = font
+        return uiLabel
+    }()
+    
+    let categoryImage : UIImageView = {
+        let image = UIImage(named: "tag")
+        let imageView = UIImageView(image: image)
+        return imageView
+    }()
+    
+    let categoryLabel : UILabel = {
+        let font = ApplicationScheme.shared.typographyScheme.headline6
+        let uiLabel = UILabel()
+        uiLabel.text = "Category"
+        uiLabel.font = font
+        return uiLabel
+    }()
+    
+    // Buttons
+    let createButton: MDCButton = {
+        let button = MDCButton()
+        button.setBackgroundColor(ApplicationScheme.shared.colorScheme.primaryColor)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Create", for: .normal)
+        button.addTarget(self, action: #selector(didTapCreate(sender:)), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func didTapCreate(sender: Any?){
+        print("The task is created")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         assembleViews()
     }
@@ -76,7 +117,45 @@ class CreateTasksViewController: UIViewController {
             make.trailing.lessThanOrEqualToSuperview()
             make.height.lessThanOrEqualTo(400)
         }
+        
+        self.view.addSubview(alarmImage)
+        self.alarmImage.snp.makeConstraints{make -> Void in
+            make.width.equalTo(24)
+            make.height.equalTo(24)
+            make.left.equalToSuperview().offset(40)
+            make.top.equalTo(self.titleTextField.snp.bottom).offset(40)
+        }
+        
+        self.view.addSubview(alarmLabel)
+        self.alarmLabel.snp.makeConstraints{make -> Void in
+            make.top.equalTo(self.titleTextField.snp.bottom).offset(40)
+            make.left.equalTo(self.alarmImage.snp.left).offset(40)
+            make.right.equalToSuperview()
+        }
        
+        self.view.addSubview(categoryImage)
+        self.categoryImage.snp.makeConstraints{make -> Void in
+            make.width.equalTo(24)
+            make.height.equalTo(24)
+            make.left.equalToSuperview().offset(40)
+            make.top.equalTo(self.alarmLabel.snp.bottom).offset(40)
+        }
+        
+        self.view.addSubview(categoryLabel)
+        self.categoryLabel.snp.makeConstraints{make -> Void in
+            make.top.equalTo(self.alarmLabel.snp.bottom).offset(40)
+            make.left.equalTo(self.categoryImage.snp.left).offset(40)
+            make.right.equalToSuperview()
+        }
+        
+        self.view.addSubview(createButton)
+        self.createButton.snp.makeConstraints{make -> Void in
+            make.left.equalToSuperview()
+            make.height.equalTo(54)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            make.right.equalToSuperview()
+        }
+        
     }
 
     @objc func backPressed(sender:Any?){
