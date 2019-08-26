@@ -12,6 +12,7 @@ import SnapKit
 
 class CreateTasksViewController: UIViewController {
 
+    var repository = Repository()
     
     //navigation view
     let navigationBar : MDCNavigationBar = {
@@ -83,9 +84,20 @@ class CreateTasksViewController: UIViewController {
         return button
     }()
     
+    //will get called when create button clicked, save user data here
     @objc func didTapCreate(sender: Any?){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        print("The task is created")
+        let errorString = "Sorry something went wrong while saving data"
+        let successString = "A new task has been created successfully"
+        guard let titleText = titleTextField.text else{
+            TaskUtilties.showToast(msg: errorString)
+            return
+        }
+        
+        if repository.saveTask(title: titleText, tag: NSCategory.Music) {
+            TaskUtilties.showToast(msg: successString)
+        }else{
+            TaskUtilties.showToast(msg: errorString)
+        }
     }
     
     override func viewDidLoad() {

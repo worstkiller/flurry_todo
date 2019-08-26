@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MaterialComponents.MaterialSnackbar
 
 struct TaskUtilties {
     
@@ -27,6 +28,13 @@ struct TaskUtilties {
             result.append(base62chars[random])
         }
         return result
+    }
+    
+    //show a bottom snackbar message
+     static func showToast(msg: String) {
+        let message = MDCSnackbarMessage()
+        message.text =  msg
+        MDCSnackbarManager.show(message)
     }
 }
 
