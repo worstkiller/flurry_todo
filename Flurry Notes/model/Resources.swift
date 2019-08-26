@@ -9,61 +9,59 @@
 import Foundation
 
 struct Resources {
-
-    func getImage(type: Images)-> String{
+    
+    /*
+     get an image from for a category
+    */
+   static func getImage(type: NSCategory)-> String{
         switch type {
-        case .DOCUMENT:
-            return "document"
-        case .ALARM:
-            return "alarm"
-        case .TAG:
-            return "tag"
-        case .TRAVEL:
+        case .Work:
+            return "work"
+        case .Travel:
             return "travel"
-        case .WORK:
-            return "work"
-        case .STUDY:
-            return "work"
-        case .SHOPPING:
-            return "shopping"
-        case .PLUS:
-            return "plus"
-        case .MUSIC:
+        case .Music:
             return "music"
-        case .MORE:
-            return "more"
-        case .HOME:
+        case .Study:
+            return "study"
+        case .Home:
             return "home"
-        case .DRAWING:
+        case .Shopping:
+            return "shopping"
+        case .Drawing:
             return "drawing"
-        case .TASKS_BACKGROUND:
-            return "task_background"
-        case .CLOSE:
-            return "close"
-        case .BACK:
-            return "back"
         default:
             return ""
         }
+    }
+ 
+    //all images enum
+   internal struct Images {
+        static let DOCUMENT = "document"
+        static let ALARM = "alarm"
+        static let TAG = "tag"
+        static let TRAVEL = "travel"
+        static let WORK = "work"
+        static let STUDY = "study"
+        static let SHOPPING = "shopping"
+        static let PLUS = "plus"
+        static let MUSIC = "music"
+        static let MORE = "more"
+        static let HOME = "home"
+        static let DRAWING = "drawing"
+        static let TASKS_BACKGROUND = "task_background"
+        static let CLOSE = "close"
+        static let BACK = "back"
     }
     
 }
 
 //all images enum
-enum Images {
-    case DOCUMENT
-    case ALARM
-    case TAG
-    case TRAVEL
-    case WORK
-    case STUDY
-    case SHOPPING
-    case PLUS
-    case MUSIC
-    case MORE
-    case HOME
-    case DRAWING
-    case TASKS_BACKGROUND
-    case CLOSE
-    case BACK
+enum NSCategory {
+    case Work
+    case Travel
+    case Music
+    case Study
+    case Home
+    case Shopping
+    case Drawing
 }
