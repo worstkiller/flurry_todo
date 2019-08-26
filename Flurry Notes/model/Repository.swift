@@ -12,7 +12,7 @@ import CoreData
 //a repository instance to save, delete, and update data inside the core data
 struct Repository {
     
-    let DB_REFERENCE = "Flurry_Notes"
+    let TASK_ENTITY = "TaskEntity"
     
     lazy var coreDataContext : NSManagedObjectContext = {
          (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -20,10 +20,10 @@ struct Repository {
     
     //call this to save the task object
     mutating func  saveTask(title: String, tag: NSCategory) -> Bool{
-        let entity = NSEntityDescription.entity(forEntityName: DB_REFERENCE, in: coreDataContext)
+        let entity = NSEntityDescription.entity(forEntityName: TASK_ENTITY, in: coreDataContext)
         let newTask = NSManagedObject(entity: entity!, insertInto: coreDataContext)
         newTask.setValue(title, forKey: NSTaskEntity.TITLTE)
-        newTask.setValue(tag, forKey: NSTaskEntity.CATEGORY)
+        newTask.setValue(tag.rawValue, forKey: NSTaskEntity.CATEGORY)
         newTask.setValue(TaskUtilties.getDateTime(), forKey: NSTaskEntity.DATE)
         newTask.setValue(TaskUtilties.generateTransactionId(), forKey: NSTaskEntity.ID)
         newTask.setValue(false, forKey: NSTaskEntity.IS_COMPLETED)

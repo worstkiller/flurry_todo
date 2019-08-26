@@ -56,7 +56,7 @@ struct Resources {
 }
 
 //all images enum
-enum NSCategory {
+enum NSCategory: String {
     case Work
     case Travel
     case Music
