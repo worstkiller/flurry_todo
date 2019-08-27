@@ -17,3 +17,11 @@ struct NSTaskEntity {
     static let IS_COMPLETED =  "is_completed"
     static let TITLTE =  "title"
 }
+
+//Category entity table columns
+struct NSCategoryEntity {
+    static let ID = "id"
+    static let IMAGE = "image"
+    static let DATE = "date"
+    static let TITLTE = "title"
+}

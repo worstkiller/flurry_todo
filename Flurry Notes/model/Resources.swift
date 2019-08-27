@@ -13,24 +13,24 @@ struct Resources {
     /*
      get an image from for a category
     */
-   static func getImage(type: NSCategory)-> String{
+   static func getImageForCategory(type: NSCategory)-> String{
         switch type {
         case .Work:
-            return "work"
+            return Images.WORK
         case .Travel:
-            return "travel"
+            return Images.TRAVEL
         case .Music:
-            return "music"
+            return Images.MUSIC
         case .Study:
-            return "study"
+            return Images.STUDY
         case .Home:
-            return "home"
+            return Images.HOME
         case .Shopping:
-            return "shopping"
+            return Images.SHOPPING
         case .Drawing:
-            return "drawing"
+            return Images.DRAWING
         default:
-            return ""
+            return Images.DOCUMENT
         }
     }
  
@@ -56,12 +56,13 @@ struct Resources {
 }
 
 //all images enum
-enum NSCategory: String {
+enum NSCategory: String, CaseIterable {
+    case All
     case Work
-    case Travel
     case Music
+    case Travel
     case Study
     case Home
-    case Shopping
     case Drawing
+    case Shopping
 }

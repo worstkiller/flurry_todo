@@ -13,6 +13,8 @@ import MaterialComponents
 class HomeViewController: UICollectionViewController {
     var shouldDisplayLogin = false
     var appBarViewController = MDCAppBarViewController()
+    private var repository  = Repository()
+    private var categories = [CategoryResult]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +70,13 @@ class HomeViewController: UICollectionViewController {
         
         //apply defined layout to collectionview
         collectionView!.collectionViewLayout = layout
+        
+        getCategoryValues()
     
+    }
+    
+    private func getCategoryValues(){
+        self.categories += self.repository.getAllCategory()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,25 +99,23 @@ class HomeViewController: UICollectionViewController {
     
     //MARK - Methods
     @objc func menuItemTapped(sender: Any) {
-//        let loginViewController = LoginViewController(nibName: nil, bundle: nil)
-//        self.present(loginViewController, animated: true, completion: nil)
+        print("menu item tapped")
     }
     
 //    MARK - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        let count = Catalog.count
-        return count
+        return categories.isEmpty ? 0 : categories.count
     }
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "ProductCell",
                                                             for: indexPath) as! ProductCell
-        let product = Catalog.productAtIndex(index: indexPath.row)
-        cell.imageView.image = UIImage(named: product.imageName)
-        cell.nameLabel.text = product.productName
-        cell.priceLabel.text = product.price
+        let category = categories[indexPath.row]
+        cell.imageView.image = UIImage(named: category.image)
+        cell.nameLabel.text = category.title
+        cell.priceLabel.text = "\(120) Tasks"
         collectionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: collectionView.frame.height + 20.0)
         collectionView.layoutIfNeeded()
         return cell

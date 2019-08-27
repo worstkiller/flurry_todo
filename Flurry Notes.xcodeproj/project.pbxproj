@@ -15,10 +15,11 @@
 		1D05867A22E8D5AB00637894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D05867822E8D5AB00637894 /* LaunchScreen.storyboard */; };
 		1D1B1CFD22F6F5B600B55F62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1B1CFC22F6F5B600B55F62 /* BaseViewController.swift */; };
 		1D29FBE2231430A000719E3A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29FBE1231430A000719E3A /* Repository.swift */; };
-		1D29FBE4231438B100719E3A /* NSTaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29FBE3231438B100719E3A /* NSTaskEntity.swift */; };
+		1D29FBE4231438B100719E3A /* FlurryEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29FBE3231438B100719E3A /* FlurryEntities.swift */; };
 		1D29FBE62314399A00719E3A /* TaskUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29FBE52314399A00719E3A /* TaskUtilities.swift */; };
 		1D391249230C65F600AB6757 /* CreateTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D391248230C65F600AB6757 /* CreateTasksViewController.swift */; };
 		1D4CFEF022FEACF200B43B1E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */; };
+		1DA1C14523159BD3006DC66A /* FlurryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1C14423159BD3006DC66A /* FlurryModels.swift */; };
 		1DAF50C0230B0BCB00E8791A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF50BF230B0BCB00E8791A /* Assets.xcassets */; };
 		1DB3D28822F9F2DE0048DC12 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28522F9F2DE0048DC12 /* Rubik-Medium.ttf */; };
 		1DB3D28922F9F2DE0048DC12 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28622F9F2DE0048DC12 /* Rubik-Regular.ttf */; };
@@ -42,10 +43,11 @@
 		1D05867B22E8D5AB00637894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D1B1CFC22F6F5B600B55F62 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1D29FBE1231430A000719E3A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		1D29FBE3231438B100719E3A /* NSTaskEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTaskEntity.swift; sourceTree = "<group>"; };
+		1D29FBE3231438B100719E3A /* FlurryEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlurryEntities.swift; sourceTree = "<group>"; };
 		1D29FBE52314399A00719E3A /* TaskUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUtilities.swift; sourceTree = "<group>"; };
 		1D391248230C65F600AB6757 /* CreateTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTasksViewController.swift; sourceTree = "<group>"; };
 		1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		1DA1C14423159BD3006DC66A /* FlurryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlurryModels.swift; sourceTree = "<group>"; };
 		1DAF50BF230B0BCB00E8791A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DB3D28522F9F2DE0048DC12 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		1DB3D28622F9F2DE0048DC12 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
@@ -145,7 +147,8 @@
 				1DB8CD3822F9E3EC00D50270 /* Catalog.swift */,
 				1DCD0707231290DF00C50838 /* Resources.swift */,
 				1D29FBE1231430A000719E3A /* Repository.swift */,
-				1D29FBE3231438B100719E3A /* NSTaskEntity.swift */,
+				1D29FBE3231438B100719E3A /* FlurryEntities.swift */,
+				1DA1C14423159BD3006DC66A /* FlurryModels.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -297,7 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D29FBE4231438B100719E3A /* NSTaskEntity.swift in Sources */,
+				1D29FBE4231438B100719E3A /* FlurryEntities.swift in Sources */,
 				1D05867522E8D5AA00637894 /* Flurry_Notes.xcdatamodeld in Sources */,
 				1D1B1CFD22F6F5B600B55F62 /* BaseViewController.swift in Sources */,
 				1DE018AE23057F980062ED46 /* TasksCell.swift in Sources */,
@@ -309,6 +312,7 @@
 				1DB8CD3922F9E3EC00D50270 /* Catalog.swift in Sources */,
 				1DF3829F230960AE00D4E380 /* TasksHeaderCell.swift in Sources */,
 				1DFFE2D822F8AB5F00C337F7 /* ApplicationScheme.swift in Sources */,
+				1DA1C14523159BD3006DC66A /* FlurryModels.swift in Sources */,
 				1DE018AC2305787F0062ED46 /* DetailsViewTasksController.swift in Sources */,
 				1D29FBE62314399A00719E3A /* TaskUtilities.swift in Sources */,
 				1D05866D22E8D5AA00637894 /* AppDelegate.swift in Sources */,
