@@ -15,6 +15,7 @@ class HomeViewController: UICollectionViewController {
     var appBarViewController = MDCAppBarViewController()
     private var repository  = Repository()
     private var categories = [CategoryResult]()
+    private var hasTaskItems = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +77,7 @@ class HomeViewController: UICollectionViewController {
     }
     
     private func getCategoryValues(){
+        self.hasTaskItems = repository.hasTaskItems()
         self.categories += self.repository.getAllCategory()
     }
     
@@ -105,7 +107,7 @@ class HomeViewController: UICollectionViewController {
 //    MARK - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        return categories.isEmpty ? 0 : categories.count
+        return hasTaskItems ? categories.count : 0
     }
     
     override func collectionView(_ collectionView: UICollectionView,

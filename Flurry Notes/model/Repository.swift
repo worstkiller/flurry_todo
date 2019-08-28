@@ -85,6 +85,17 @@ struct Repository {
         }
     }
     
+    //check if there is category present or not
+    mutating func hasTaskItems()-> Bool{
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: TASK_ENTITY)
+        do{
+            let result = try coreDataContext.fetch(fetchRequest)
+            return result.count>0
+        }catch{
+            return false
+        }
+    }
+    
     //get all the category
     mutating func getAllCategory()->[CategoryResult]{
         var tempResult = [CategoryResult]()

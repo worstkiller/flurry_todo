@@ -51,6 +51,7 @@ struct Resources {
         static let TASKS_BACKGROUND = "task_background"
         static let CLOSE = "close"
         static let BACK = "back"
+        static let BOX = "box"
     }
     
 }

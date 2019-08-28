@@ -12,6 +12,12 @@ import SnapKit
 
 class BaseViewController: UIViewController {
     
+    var repository = Repository()
+    
+    let errorView : UIView = {
+        TaskUtilties.getErrorView()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +32,19 @@ class BaseViewController: UIViewController {
         
         //adding views to parent
          assembleViews(button)
+        
+        checkIfTasksAreEmpty()
+    }
+    
+    private func checkIfTasksAreEmpty(){
+        if !repository.hasTaskItems() {
+            self.view.addSubview(errorView)
+            self.errorView.snp.makeConstraints{make -> Void in
+                make.centerX.equalTo(self.view)
+                make.centerY.equalTo(self.view).offset(60)
+                make.width.height.equalTo(300)
+            }
+        }
     }
     
     //open create tasks controller

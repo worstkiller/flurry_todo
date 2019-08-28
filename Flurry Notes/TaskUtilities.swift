@@ -8,6 +8,7 @@
 
 import Foundation
 import MaterialComponents.MaterialSnackbar
+import SnapKit
 
 struct TaskUtilties {
     
@@ -35,6 +36,38 @@ struct TaskUtilties {
         let message = MDCSnackbarMessage()
         message.text =  msg
         MDCSnackbarManager.show(message)
+    }
+    
+    //get a error view with label and image view
+    static func getErrorView()-> UIView{
+        let view = UIView()
+       
+        //error image
+        let image = UIImageView(image: UIImage(named: Resources.Images.BOX))
+        view.addSubview(image)
+        image.snp.makeConstraints{make -> Void in
+            make.top.equalToSuperview().offset(40)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(40)
+            make.height.equalTo(40)
+        }
+        
+        //error label
+        let errorLabel = UILabel()
+        errorLabel.numberOfLines = 3
+        errorLabel.textAlignment = .center
+        errorLabel.text = "Nothing to show ! \n Click plus button to add one"
+        errorLabel.font = ApplicationScheme.shared.typographyScheme.headline6
+        errorLabel.textColor = UIColor(displayP3Red: 167/255, green: 171/255, blue: 178/255, alpha: 1.0)
+
+        view.addSubview(errorLabel)
+        errorLabel.snp.makeConstraints{make -> Void in
+            make.top.equalTo(image.snp.bottom).offset(10)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+        
+        return view
     }
 }
 
