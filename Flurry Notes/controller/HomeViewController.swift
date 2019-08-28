@@ -39,8 +39,8 @@ class HomeViewController: UICollectionViewController {
             .surfaceColor
         self.collectionView?.backgroundColor = ApplicationScheme.shared.colorScheme
             .surfaceColor
-//        MDCAppBarColorThemer.applyColorScheme(ApplicationScheme.shared.colorScheme
-//            , to:self.appBarViewController)
+        // MDCAppBarColorThemer.applyColorScheme(ApplicationScheme.shared.colorScheme
+        // , to:self.appBarViewController)
         // TODO: Theme our interface with our typography
         MDCAppBarTypographyThemer.applyTypographyScheme(ApplicationScheme.shared.typographyScheme
             , to: self.appBarViewController)
@@ -71,9 +71,12 @@ class HomeViewController: UICollectionViewController {
         
         //apply defined layout to collectionview
         collectionView!.collectionViewLayout = layout
-        
-        getCategoryValues()
     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getCategoryValues()
+        collectionView.reloadData()
     }
     
     private func getCategoryValues(){
@@ -104,7 +107,7 @@ class HomeViewController: UICollectionViewController {
         print("menu item tapped")
     }
     
-//    MARK - UICollectionViewDataSource
+    //MARK - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         return hasTaskItems ? categories.count : 0

@@ -32,7 +32,9 @@ class BaseViewController: UIViewController {
         
         //adding views to parent
          assembleViews(button)
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         checkIfTasksAreEmpty()
     }
     
@@ -44,6 +46,10 @@ class BaseViewController: UIViewController {
                 make.centerY.equalTo(self.view).offset(60)
                 make.width.height.equalTo(300)
             }
+            errorView.fadeIn()
+        }else if errorView.window != nil {
+            //remove itself from parent view
+            errorView.fadeOut()
         }
     }
     
