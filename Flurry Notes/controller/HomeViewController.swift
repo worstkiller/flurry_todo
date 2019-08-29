@@ -128,7 +128,8 @@ class HomeViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "2")
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        newViewController.category = categories[indexPath.row]
                 self.present(newViewController, animated: true, completion: nil)
         print("index is \(indexPath.row)")
     }

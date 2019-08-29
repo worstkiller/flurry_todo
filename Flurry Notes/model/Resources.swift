@@ -66,4 +66,15 @@ enum NSCategory: String, CaseIterable {
     case Home
     case Drawing
     case Shopping
+    
+    //get an ns category from raw value
+    static func getNSCategoryFrom(rawValue: String)-> NSCategory{
+        for item in NSCategory.allCases {
+            if item.rawValue == rawValue {
+                return item
+                break
+            }
+        }
+        return NSCategory.All
+    }
 }

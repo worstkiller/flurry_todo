@@ -12,7 +12,9 @@ import SnapKit
 
 class DetailsViewController: UIViewController {
     
-
+    //this will get initialized while starting this view controller
+    var category: CategoryResult?
+    var repository = Repository()
     
     let navigationBar : MDCNavigationBar = {
         let appBar = MDCNavigationBar()
@@ -49,8 +51,7 @@ class DetailsViewController: UIViewController {
     
     //category image
     let imageCategoryView: UIImageView = {
-        let img = UIImage(named: "document")?.withInset(UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40))
-        let category = UIImageView(image: img)
+        let category = UIImageView()
         category.autoresizingMask = [.flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
         category.contentMode = UIView.ContentMode.scaleAspectFit
         category.layer.backgroundColor = ApplicationScheme.shared.colorScheme.backgroundColor.cgColor
@@ -64,7 +65,6 @@ class DetailsViewController: UIViewController {
         let font = ApplicationScheme.shared.typographyScheme.headline3
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "All"
         titleLabel.sizeToFit()
         titleLabel.textColor=ApplicationScheme.shared.colorScheme.backgroundColor
         titleLabel.adjustsFontSizeToFitWidth = true
@@ -78,7 +78,7 @@ class DetailsViewController: UIViewController {
         let font = ApplicationScheme.shared.typographyScheme.headline5
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "\(23) Tasks"
+        titleLabel.text = "has no tasks yet"
         titleLabel.sizeToFit()
         titleLabel.textColor=ApplicationScheme.shared.colorScheme.backgroundColor
         titleLabel.adjustsFontSizeToFitWidth = true
@@ -98,6 +98,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         assembleViews()
+        intitViews()
     }
     
     private func assembleViews(){
@@ -140,6 +141,7 @@ class DetailsViewController: UIViewController {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -149,6 +151,22 @@ class DetailsViewController: UIViewController {
     @objc func backPressed(sender:Any?){
         self.dismiss(animated: true)
         print("back pressed details")
+    }
+    
+    func intitViews(){
+        //set details image
+        let nsCategory = NSCategory.getNSCategoryFrom(rawValue: category!.title)
+        let name = Resources.getImageForCategory(type: nsCategory)
+        let img = UIImage(named: name)?.withInset(UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40))
+        imageCategoryView.image = img
+        
+        //set details title
+        titleLabel.text = category?.title
+        
+        let countOfItems = repository.categoryItemsCountFor(nsCategory: nsCategory)
+        if countOfItems > 0 {
+             captionLabel.text = "\(countOfItems) Tasks"
+        }
     }
 
 }
