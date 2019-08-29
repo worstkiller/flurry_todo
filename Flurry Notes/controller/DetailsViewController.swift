@@ -157,13 +157,15 @@ class DetailsViewController: UIViewController {
         //set details image
         let nsCategory = NSCategory.getNSCategoryFrom(rawValue: category!.title)
         let name = Resources.getImageForCategory(type: nsCategory)
-        let img = UIImage(named: name)?.withInset(UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40))
+        let rawImage = UIImage(named: name)
+        let resizedImage  = TaskUtilties.resizeImage(image: rawImage!, newWidth: CGFloat(50))
+        let img = resizedImage.withInset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
         imageCategoryView.image = img
         
         //set details title
         titleLabel.text = category?.title
         
-        let countOfItems = repository.categoryItemsCountFor(nsCategory: nsCategory)
+        let countOfItems = repository.getItemsCountFor(nsCategory: nsCategory)
         if countOfItems > 0 {
              captionLabel.text = "\(countOfItems) Tasks"
         }

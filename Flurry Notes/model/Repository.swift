@@ -86,7 +86,7 @@ struct Repository {
     }
     
     //returns count if there is category present or 0
-    mutating func categoryItemsCountFor(nsCategory: NSCategory)-> Int{
+    mutating func getItemsCountFor(nsCategory: NSCategory)-> Int{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: TASK_ENTITY)
         fetchRequest.predicate = NSPredicate(format: "\(NSTaskEntity.CATEGORY) == %@", nsCategory.rawValue)
         do{

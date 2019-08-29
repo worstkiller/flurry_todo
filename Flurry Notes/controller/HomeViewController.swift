@@ -81,7 +81,7 @@ class HomeViewController: UICollectionViewController {
     
     private func getCategoryValues(){
         self.hasTaskItems = repository.hasTaskItems()
-        self.categories += self.repository.getAllCategory()
+        self.categories = self.repository.getAllCategory()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -120,7 +120,7 @@ class HomeViewController: UICollectionViewController {
         let category = categories[indexPath.row]
         cell.imageView.image = UIImage(named: category.image)
         cell.nameLabel.text = category.title
-        cell.priceLabel.text = "\(120) Tasks"
+        cell.priceLabel.text = "\(repository.getItemsCountFor(nsCategory: NSCategory.getNSCategoryFrom(rawValue: category.title))) Tasks"
         collectionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: collectionView.frame.height + 20.0)
         collectionView.layoutIfNeeded()
         return cell
