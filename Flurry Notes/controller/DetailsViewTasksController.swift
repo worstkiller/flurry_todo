@@ -10,22 +10,31 @@ import UIKit
 
 class DetailsViewTasksController: UICollectionViewController{
     
+    var categoryResult: CategoryResult?
+    var repository = Repository()
+    var taskItems: [TaskResult] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initViews()
+    }
+    
+    func initViews(){
+        taskItems = repository.getAllTasksFor(nsCategory: NSCategory.getNSCategoryFrom(rawValue: categoryResult?.title ?? NSCategoryEntity.TITLTE))
     }
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        let count = 3
-        return count
+        return taskItems.count
     }
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "TasksCell",
                                                             for: indexPath) as! TasksCell
-        cell.title.text = "Call Max"
-        cell.dateTime.text = "20:15 April 29"
+        let singleITem = taskItems[indexPath.row]
+        cell.title.text = singleITem.title
+        cell.dateTime.text = try? TaskUtilties.getFormattedDate(dateTime: singleITem.date)
         cell.isCompleted.boxType = .square
         return cell
     }

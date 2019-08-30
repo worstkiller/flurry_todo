@@ -61,12 +61,22 @@ struct Repository {
     
     //get all task which belong some category
     mutating func getAllTasksFor(nsCategory: NSCategory)-> [TaskResult]{
-        let tempResult = [TaskResult]()
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: CATEGORY_ENTITY)
+        var tempResult = [TaskResult]()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: TASK_ENTITY)
+        fetchRequest.predicate = NSPredicate(format: "\(NSTaskEntity.CATEGORY) == %@", nsCategory.rawValue)
         do {
             let result = try coreDataContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
-                print(data.value(forKey: "title"))
+                let title = data.value(forKey: NSTaskEntity.TITLTE) as! String
+                let id = data.value(forKey: NSTaskEntity.ID) as! String
+                let image = data.value(forKey: NSTaskEntity.IMAGE) as! String
+                let category = data.value(forKey: NSTaskEntity.CATEGORY) as! String
+                let isCompleted = data.value(forKey: NSTaskEntity.IS_COMPLETED) as! Bool
+                let date = data.value(forKey: NSTaskEntity.DATE) as! Int64
+                
+                let taskItem = TaskResult(id: id, title: title, category: category, date: date, image: image, isCompleted: isCompleted)
+                
+                tempResult.append(taskItem)
             }
         } catch {
             print("Failed")

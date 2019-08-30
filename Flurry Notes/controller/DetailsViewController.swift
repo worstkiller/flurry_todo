@@ -170,6 +170,14 @@ class DetailsViewController: UIViewController {
              captionLabel.text = "\(countOfItems) Tasks"
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailsViewTasksController" {
+            let destination = segue.destination as! DetailsViewTasksController
+            destination.categoryResult = category
+        }
+        print("The segua is passing data to details task controller")
+    }
 
 }
 

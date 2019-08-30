@@ -82,6 +82,17 @@ struct TaskUtilties {
         return newImage!
     }
     
+    /*get back date in format HH:mm MMM YYYY
+        ex 20:15 April 29
+     */
+    static func getFormattedDate(dateTime: Int64)throws ->String {
+        let date = Date(timeIntervalSince1970: TimeInterval(dateTime))
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "HH:mm MMM dd"
+        return dateFormatterGet.string(from: date)
+        
+    }
+    
 }
 
 extension Date {
