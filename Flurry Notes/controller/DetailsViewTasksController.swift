@@ -12,8 +12,7 @@ class DetailsViewTasksController: UICollectionViewController{
     
     var categoryResult: CategoryResult?
     var repository = Repository()
-    var taskItems: [TaskResult] = []
-    var itemsMappedToHeader: [String: [TaskResult]] = [:]
+    var itemsMappedToHeader = [TaskHeaderModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +25,13 @@ class DetailsViewTasksController: UICollectionViewController{
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        return taskItems.count
+        return itemsMappedToHeader[section].getTaskResults().count
     }
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "TasksCell",
-                                                            for: indexPath) as! TasksCell
-        let singleITem = taskItems[indexPath.row]
+        let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "TasksCell",for: indexPath) as! TasksCell
+        let singleITem = itemsMappedToHeader[indexPath.section].getTaskResults()[indexPath.row]
         cell.title.text = singleITem.title
         cell.dateTime.text = try? TaskUtilties.getFormattedDate(dateTime: singleITem.date)
         cell.isCompleted.boxType = .square
@@ -47,11 +45,7 @@ class DetailsViewTasksController: UICollectionViewController{
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TasksHeaderCell", for: indexPath) as? TasksHeaderCell{
-            if indexPath.row % 2 == 0 {
-                sectionHeader.headerLabel.text = "Done"
-            }else{
-                sectionHeader.headerLabel.text = "Today"
-            }
+            sectionHeader.headerLabel.text = itemsMappedToHeader[indexPath.section].getHeader()
             print("Header index row is \(indexPath.row)")
             return sectionHeader
         }
@@ -60,7 +54,8 @@ class DetailsViewTasksController: UICollectionViewController{
     
     private func getSortedItemsForCategory(category: NSCategory){
         getAllFormattedTasks(repository: repository, nsCategory: category){ data -> Void in
-            self.itemsMappedToHeader = data ?? [:]
+            self.itemsMappedToHeader = data
+            self.collectionView.reloadData()
             print("Task items are sorted")
         }
     }

@@ -9,8 +9,8 @@
 import Foundation
 
 /*
- A contact between client and provider for tasks realted data
+ A contract between client and provider for tasks realted data
  */
 protocol TaskProtocol {
-    func getAllFormattedTasks(repository: Repository, nsCategory: NSCategory, completion: @escaping ([String: [TaskResult]]?) -> Void)
+    func getAllFormattedTasks(repository: Repository, nsCategory: NSCategory, completion: @escaping ([TaskHeaderModel]) -> Void)
 }

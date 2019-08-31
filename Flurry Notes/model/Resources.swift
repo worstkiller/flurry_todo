@@ -72,7 +72,6 @@ enum NSCategory: String, CaseIterable {
         for item in NSCategory.allCases {
             if item.rawValue == rawValue {
                 return item
-                break
             }
         }
         return NSCategory.All

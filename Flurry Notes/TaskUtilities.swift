@@ -133,7 +133,7 @@ extension UIView {
 //extension for getting formatted tasks according to priorities in details task view
 extension DetailsViewTasksController: TaskProtocol{
     
-    func getAllFormattedTasks(repository: Repository, nsCategory: NSCategory, completion: @escaping ([String : [TaskResult]]?) -> Void) {
+    func getAllFormattedTasks(repository: Repository, nsCategory: NSCategory, completion: @escaping ([TaskHeaderModel]) -> Void) {
        
         let HEADER_DONE = "Done"
         let HEADER_UPCOMING = "Upcoming"
@@ -143,7 +143,7 @@ extension DetailsViewTasksController: TaskProtocol{
         //moving on to background thread loading of tasks from Core Data
         DispatchQueue.global(qos: .background).async {
             
-            var mappedItems = [String: [TaskResult]]()
+            var taskHeaderModel = [TaskHeaderModel]()
             
             print("In background thread")
             let allTasks = self.repository.getAllTasksFor(nsCategory: NSCategory.getNSCategoryFrom(rawValue: self.categoryResult?.title ?? NSCategoryEntity.TITLTE))
@@ -151,7 +151,7 @@ extension DetailsViewTasksController: TaskProtocol{
             let today  = Date()
             let calendarToday = Calendar.current
             
-            var headerArray = Set<String>()
+            var headerSet = Set<TaskHeaderModel.HEADER>()
             var todayArray = [TaskResult]()
             var upcomingArray = [TaskResult]()
             var lateArray = [TaskResult]()
@@ -161,41 +161,44 @@ extension DetailsViewTasksController: TaskProtocol{
                 let taskDate = TaskUtilties.getDateFromEpoch(epoch: task.date)
                 if task.isCompleted {
                     doneArray.append(task)
-                    headerArray.insert(HEADER_DONE)
+                    headerSet.insert(TaskHeaderModel.HEADER.Done)
                     print("Some tasks are for \(HEADER_DONE)")
                 }else if  calendarToday.isDateInToday(taskDate) {
                     todayArray.append(task)
-                    headerArray.insert(HEADER_TODAY)
+                    headerSet.insert(TaskHeaderModel.HEADER.Today)
                     print("Some tasks are for \(HEADER_TODAY)")
                 }else if(today < taskDate){
                     upcomingArray.append(task)
-                    headerArray.insert(HEADER_UPCOMING)
+                    headerSet.insert(TaskHeaderModel.HEADER.Upcoming)
                     print("Some tasks are for \(HEADER_UPCOMING)")
                 }else {
                     lateArray.append(task)
-                    headerArray.insert(HEADER_LATE)
+                    headerSet.insert(TaskHeaderModel.HEADER.Late)
                     print("Some tasks are for \(HEADER_LATE)")
                 }
             }
             
+           let headerArray = Array(headerSet).sorted()
+            
             for item in headerArray{
                 var array = [TaskResult]()
-                if item == HEADER_DONE{
+                switch item{
+                case .Done:
                     array = doneArray
-                }else if item == HEADER_TODAY{
-                     array = todayArray
-                }else if item == HEADER_UPCOMING{
-                     array = upcomingArray
-                }else {
-                     array = lateArray
+                case .Late:
+                    array = todayArray
+                case .Today:
+                    array = upcomingArray
+                case .Upcoming:
+                    array = lateArray
                 }
-                mappedItems[item] = array
+                taskHeaderModel.append(TaskHeaderModel.init(header: item.rawValue, items: array))
             }
             
             //moving data to ui thread
             DispatchQueue.main.async {
                 print("dispatched to main")
-                completion(mappedItems)
+                completion(taskHeaderModel)
             }
             
         }
