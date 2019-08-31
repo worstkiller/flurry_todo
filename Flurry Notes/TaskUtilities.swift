@@ -134,19 +134,14 @@ extension UIView {
 extension DetailsViewTasksController: TaskProtocol{
     
     func getAllFormattedTasks(repository: Repository, nsCategory: NSCategory, completion: @escaping ([TaskHeaderModel]) -> Void) {
-       
-        let HEADER_DONE = "Done"
-        let HEADER_UPCOMING = "Upcoming"
-        let HEADER_LATE = "Late"
-        let HEADER_TODAY = "Today"
+
+        let allTasks = self.repository.getAllTasksFor(nsCategory: NSCategory.getNSCategoryFrom(rawValue: self.categoryResult?.title ?? NSCategoryEntity.TITLTE))
         
         //moving on to background thread loading of tasks from Core Data
         DispatchQueue.global(qos: .background).async {
+            print("In background thread")
             
             var taskHeaderModel = [TaskHeaderModel]()
-            
-            print("In background thread")
-            let allTasks = self.repository.getAllTasksFor(nsCategory: NSCategory.getNSCategoryFrom(rawValue: self.categoryResult?.title ?? NSCategoryEntity.TITLTE))
             
             let today  = Date()
             let calendarToday = Calendar.current
@@ -162,19 +157,15 @@ extension DetailsViewTasksController: TaskProtocol{
                 if task.isCompleted {
                     doneArray.append(task)
                     headerSet.insert(TaskHeaderModel.HEADER.Done)
-                    print("Some tasks are for \(HEADER_DONE)")
                 }else if  calendarToday.isDateInToday(taskDate) {
                     todayArray.append(task)
                     headerSet.insert(TaskHeaderModel.HEADER.Today)
-                    print("Some tasks are for \(HEADER_TODAY)")
                 }else if(today < taskDate){
                     upcomingArray.append(task)
                     headerSet.insert(TaskHeaderModel.HEADER.Upcoming)
-                    print("Some tasks are for \(HEADER_UPCOMING)")
                 }else {
                     lateArray.append(task)
                     headerSet.insert(TaskHeaderModel.HEADER.Late)
-                    print("Some tasks are for \(HEADER_LATE)")
                 }
             }
             
@@ -197,8 +188,8 @@ extension DetailsViewTasksController: TaskProtocol{
             
             //moving data to ui thread
             DispatchQueue.main.async {
-                print("dispatched to main")
                 completion(taskHeaderModel)
+                print("dispatched to main")
             }
             
         }
