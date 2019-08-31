@@ -13,6 +13,7 @@ class DetailsViewTasksController: UICollectionViewController{
     var categoryResult: CategoryResult?
     var repository = Repository()
     var taskItems: [TaskResult] = []
+    var itemsMappedToHeader: [String: [TaskResult]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class DetailsViewTasksController: UICollectionViewController{
     }
     
     func initViews(){
-        taskItems = repository.getAllTasksFor(nsCategory: NSCategory.getNSCategoryFrom(rawValue: categoryResult?.title ?? NSCategoryEntity.TITLTE))
+         getSortedItemsForCategory(category: NSCategory.getNSCategoryFrom(rawValue: categoryResult?.title ?? NSCategoryEntity.TITLTE))
     }
     
     override func collectionView(_ collectionView: UICollectionView,
@@ -40,21 +41,28 @@ class DetailsViewTasksController: UICollectionViewController{
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return itemsMappedToHeader.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TasksHeaderCell", for: indexPath) as? TasksHeaderCell{
-            if indexPath.row%2==0 {
+            if indexPath.row % 2 == 0 {
                 sectionHeader.headerLabel.text = "Done"
             }else{
                 sectionHeader.headerLabel.text = "Today"
             }
-            print("index row is \(indexPath.row)")
+            print("Header index row is \(indexPath.row)")
             return sectionHeader
         }
         return UICollectionReusableView()
+    }
+    
+    private func getSortedItemsForCategory(category: NSCategory){
+        getAllFormattedTasks(repository: repository, nsCategory: category){ data -> Void in
+            self.itemsMappedToHeader = data ?? [:]
+            print("Task items are sorted")
+        }
     }
     
 }

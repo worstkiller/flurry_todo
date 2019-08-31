@@ -21,6 +21,7 @@
 		1D4CFEF022FEACF200B43B1E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */; };
 		1DA1C14523159BD3006DC66A /* FlurryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1C14423159BD3006DC66A /* FlurryModels.swift */; };
 		1DAF50C0230B0BCB00E8791A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF50BF230B0BCB00E8791A /* Assets.xcassets */; };
+		1DB1B5DD231A8DD100330809 /* TasksProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1B5DC231A8DD100330809 /* TasksProtocol.swift */; };
 		1DB3D28822F9F2DE0048DC12 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28522F9F2DE0048DC12 /* Rubik-Medium.ttf */; };
 		1DB3D28922F9F2DE0048DC12 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28622F9F2DE0048DC12 /* Rubik-Regular.ttf */; };
 		1DB3D28A22F9F2DE0048DC12 /* Rubik-OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28722F9F2DE0048DC12 /* Rubik-OFL.txt */; };
@@ -49,6 +50,7 @@
 		1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		1DA1C14423159BD3006DC66A /* FlurryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlurryModels.swift; sourceTree = "<group>"; };
 		1DAF50BF230B0BCB00E8791A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1DB1B5DC231A8DD100330809 /* TasksProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksProtocol.swift; sourceTree = "<group>"; };
 		1DB3D28522F9F2DE0048DC12 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		1DB3D28622F9F2DE0048DC12 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		1DB3D28722F9F2DE0048DC12 /* Rubik-OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Rubik-OFL.txt"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				1D29FBE1231430A000719E3A /* Repository.swift */,
 				1D29FBE3231438B100719E3A /* FlurryEntities.swift */,
 				1DA1C14423159BD3006DC66A /* FlurryModels.swift */,
+				1DB1B5DC231A8DD100330809 /* TasksProtocol.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				1DE018AE23057F980062ED46 /* TasksCell.swift in Sources */,
 				1D391249230C65F600AB6757 /* CreateTasksViewController.swift in Sources */,
 				1D05866F22E8D5AA00637894 /* HomeViewController.swift in Sources */,
+				1DB1B5DD231A8DD100330809 /* TasksProtocol.swift in Sources */,
 				1D4CFEF022FEACF200B43B1E /* DetailsViewController.swift in Sources */,
 				1DB8CD3722F9E36600D50270 /* ProductCell.swift in Sources */,
 				1D29FBE2231430A000719E3A /* Repository.swift in Sources */,
