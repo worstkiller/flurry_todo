@@ -147,6 +147,41 @@ struct Repository {
         }
         return tempResult
     }
+    
+    //call this to get single CategoryResult based on NSCategory
+    mutating func getCategoryResultFrom(nsCategory: NSCategory) -> CategoryResult? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: CATEGORY_ENTITY)
+        fetchRequest.predicate = NSPredicate(format: "\(NSCategoryEntity.TITLTE) == %@", nsCategory.rawValue)
+        do {
+            let result = try coreDataContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject] {
+                let id = data.value(forKey: NSCategoryEntity.ID) as! String
+                let image = data.value(forKey: NSCategoryEntity.IMAGE) as! String
+                let title = data.value(forKey: NSCategoryEntity.TITLTE) as! String
+                let date = data.value(forKey: NSCategoryEntity.DATE) as! Int64
+                //only single result should be there so returning it
+                return CategoryResult(id: id , title: title , date: date, image: image)
+                print("One item retrieved for category")
+            }
+        } catch {
+            print("Failed")
+        }
+        return nil
+    }
+    
+    //get all the categories who have any tasks related
+    mutating func getAllCategoriesWithTasks()->[CategoryResult]{
+        var tempResult = [CategoryResult]()
+        for item in NSCategory.allCases {
+            let tasksCountForSingleCategory = getItemsCountFor(nsCategory: item)
+            if tasksCountForSingleCategory > 0 {
+                if let item = getCategoryResultFrom(nsCategory: item){
+                    tempResult.append(item)
+                }
+            }
+        }
+        return tempResult
+    }
 }
 
 

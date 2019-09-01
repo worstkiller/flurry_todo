@@ -81,7 +81,7 @@ class HomeViewController: UICollectionViewController {
     
     private func getCategoryValues(){
         self.hasTaskItems = repository.hasTaskItems()
-        self.categories = self.repository.getAllCategory()
+        self.categories = self.repository.getAllCategoriesWithTasks()
     }
     
     override func viewDidAppear(_ animated: Bool) {
