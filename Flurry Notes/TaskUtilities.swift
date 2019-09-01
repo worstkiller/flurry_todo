@@ -177,11 +177,11 @@ extension DetailsViewTasksController: TaskProtocol{
                 case .Done:
                     array = doneArray
                 case .Late:
-                    array = todayArray
-                case .Today:
-                    array = upcomingArray
-                case .Upcoming:
                     array = lateArray
+                case .Today:
+                    array = todayArray
+                case .Upcoming:
+                    array = upcomingArray
                 }
                 taskHeaderModel.append(TaskHeaderModel.init(header: item.rawValue, items: array))
             }

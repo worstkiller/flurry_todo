@@ -63,7 +63,11 @@ struct Repository {
     mutating func getAllTasksFor(nsCategory: NSCategory)-> [TaskResult]{
         var tempResult = [TaskResult]()
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: TASK_ENTITY)
-        fetchRequest.predicate = NSPredicate(format: "\(NSTaskEntity.CATEGORY) == %@", nsCategory.rawValue)
+       
+        if NSCategory.All != nsCategory{
+            fetchRequest.predicate = NSPredicate(format: "\(NSTaskEntity.CATEGORY) == %@", nsCategory.rawValue)
+        }
+
         do {
             let result = try coreDataContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
@@ -98,7 +102,11 @@ struct Repository {
     //returns count if there is category present or 0
     mutating func getItemsCountFor(nsCategory: NSCategory)-> Int{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: TASK_ENTITY)
-        fetchRequest.predicate = NSPredicate(format: "\(NSTaskEntity.CATEGORY) == %@", nsCategory.rawValue)
+       
+        if NSCategory.All != nsCategory{
+             fetchRequest.predicate = NSPredicate(format: "\(NSTaskEntity.CATEGORY) == %@", nsCategory.rawValue)
+        }
+        
         do{
             let result = try coreDataContext.fetch(fetchRequest)
             return result.count

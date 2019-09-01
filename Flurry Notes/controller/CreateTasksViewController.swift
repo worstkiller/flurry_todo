@@ -93,7 +93,7 @@ class CreateTasksViewController: UIViewController {
             return
         }
         
-        if repository.saveTask(title: titleText, tag: NSCategory.Music) {
+        if repository.saveTask(title: titleText, tag: NSCategory.Work) {
             TaskUtilties.showToast(msg: successString)
         }else{
             TaskUtilties.showToast(msg: errorString)
