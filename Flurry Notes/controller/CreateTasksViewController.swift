@@ -13,6 +13,7 @@ import SnapKit
 class CreateTasksViewController: UIViewController {
 
     var repository = Repository()
+    let viewControllerCategories : UIViewController = UIViewController()
     
     //navigation view
     let navigationBar : MDCNavigationBar = {
@@ -55,7 +56,7 @@ class CreateTasksViewController: UIViewController {
     let alarmLabel : UILabel = {
         let font = ApplicationScheme.shared.typographyScheme.headline6
        let uiLabel = UILabel()
-        uiLabel.text = "20:14  April 24"
+        uiLabel.text = "Select reminder"
         uiLabel.font = font
         return uiLabel
     }()
@@ -69,7 +70,7 @@ class CreateTasksViewController: UIViewController {
     let categoryLabel : UILabel = {
         let font = ApplicationScheme.shared.typographyScheme.headline6
         let uiLabel = UILabel()
-        uiLabel.text = "Category"
+        uiLabel.text = "Choose category"
         uiLabel.font = font
         return uiLabel
     }()
@@ -100,10 +101,34 @@ class CreateTasksViewController: UIViewController {
         }
     }
     
+    @objc func onCategoryTap(sender: UITapGestureRecognizer){
+        print("Category is selected")
+        //view controller for categories
+        let bottomSheet = MDCBottomSheetController(contentViewController: viewControllerCategories)
+        present(bottomSheet, animated: true, completion: nil)
+    }
+    
+    @objc func onReminderTap(sender: UITapGestureRecognizer){
+        print("Reminder is selected")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         assembleViews()
+        addClickListener()
+    }
+    
+    func addClickListener(){
+        //for categories
+        let tapCat = UITapGestureRecognizer(target: self, action: #selector(onCategoryTap))
+        categoryLabel.isUserInteractionEnabled = true
+        categoryLabel.addGestureRecognizer(tapCat)
+        
+        //for reminders
+        let tapRem = UITapGestureRecognizer(target: self, action: #selector(onReminderTap))
+        alarmLabel.isUserInteractionEnabled = true
+        alarmLabel.addGestureRecognizer(tapRem)
     }
     
     func assembleViews(){
