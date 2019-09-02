@@ -7,10 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 /*
  A contract between client and provider for tasks realted data
  */
 protocol TaskProtocol {
     func getAllFormattedTasks(repository: Repository, nsCategory: NSCategory, completion: @escaping ([TaskHeaderModel]) -> Void)
+}
+
+protocol TaskCellUpdateProtocol {
+    func checkBoxUpdated(isChecked: Bool, rowIndex: IndexPath)
 }

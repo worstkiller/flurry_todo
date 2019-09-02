@@ -93,7 +93,7 @@ class CreateTasksViewController: UIViewController {
             return
         }
         
-        if repository.saveTask(title: titleText, tag: NSCategory.Work) {
+        if repository.saveTask(title: titleText, tag: NSCategory.Shopping) {
             TaskUtilties.showToast(msg: successString)
         }else{
             TaskUtilties.showToast(msg: errorString)
@@ -168,12 +168,10 @@ class CreateTasksViewController: UIViewController {
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
             make.right.equalToSuperview()
         }
-        
     }
 
     @objc func backPressed(sender:Any?){
         self.dismiss(animated: true)
         print("back pressed details")
     }
-
 }

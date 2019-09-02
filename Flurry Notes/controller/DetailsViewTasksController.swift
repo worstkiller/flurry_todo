@@ -8,8 +8,7 @@
 
 import UIKit
 
-class DetailsViewTasksController: UICollectionViewController{
-    
+class DetailsViewTasksController: UICollectionViewController, TaskCellUpdateProtocol{
     var categoryResult: CategoryResult?
     var repository = Repository()
     var itemsMappedToHeader = [TaskHeaderModel]()
@@ -35,7 +34,19 @@ class DetailsViewTasksController: UICollectionViewController{
         cell.title.text = singleITem.title
         cell.dateTime.text = try? TaskUtilties.getFormattedDate(dateTime: singleITem.date)
         cell.isCompleted.boxType = .square
+        cell.indexPath = indexPath
+        cell.calllerProtocol = self
+        cell.isCompleted.setOn(singleITem.isCompleted, animated: true)
         return cell
+    }
+    
+    //will get called everytime checkbox changes
+    func checkBoxUpdated(isChecked: Bool, rowIndex: IndexPath) {
+        var task =
+            itemsMappedToHeader[rowIndex.section].getTaskResults()[rowIndex.row]
+        task.isCompleted = isChecked
+        repository.updateTaskFor(taskResult: task)
+        print("Updated received for cell check box")
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

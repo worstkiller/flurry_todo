@@ -182,6 +182,26 @@ struct Repository {
         }
         return tempResult
     }
+    
+    //update task for category
+    mutating func updateTaskFor(taskResult : TaskResult) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: TASK_ENTITY)
+        fetchRequest.predicate = NSPredicate(format: "\(NSTaskEntity.ID) == %@", taskResult.id)
+        do {
+            let result = try coreDataContext.fetch(fetchRequest)
+            let singleObj = result[0] as! NSManagedObject
+            singleObj.setValue(taskResult.isCompleted, forKey: NSTaskEntity.IS_COMPLETED)
+            singleObj.setValue(taskResult.id, forKey: NSTaskEntity.ID)
+            singleObj.setValue(taskResult.category, forKey: NSTaskEntity.CATEGORY)
+            singleObj.setValue(taskResult.date, forKey: NSTaskEntity.DATE)
+            singleObj.setValue(taskResult.image, forKey: NSTaskEntity.IMAGE)
+            singleObj.setValue(taskResult.title, forKey: NSTaskEntity.TITLTE)
+            try coreDataContext.save()
+            print("Task is updated")
+        } catch {
+            print("Failed")
+        }
+    }
 }
 
 

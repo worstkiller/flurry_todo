@@ -11,11 +11,11 @@ import Foundation
 //db result objects
 struct TaskResult {
     let id: String
-    let title: String
-    let category: String
-    let date: Int64
-    let image: String
-    let isCompleted: Bool
+    var title: String
+    var category: String
+    var date: Int64
+    var image: String
+    var isCompleted: Bool
 }
 
 struct CategoryResult {
