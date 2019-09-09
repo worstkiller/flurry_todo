@@ -13,7 +13,6 @@ import SnapKit
 class CreateTasksViewController: UIViewController {
 
     var repository = Repository()
-    let viewControllerCategories : UIViewController = UIViewController()
     
     //navigation view
     let navigationBar : MDCNavigationBar = {
@@ -104,7 +103,10 @@ class CreateTasksViewController: UIViewController {
     @objc func onCategoryTap(sender: UITapGestureRecognizer){
         print("Category is selected")
         //view controller for categories
-        let bottomSheet = MDCBottomSheetController(contentViewController: viewControllerCategories)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
+
+        let bottomSheet = MDCBottomSheetController(contentViewController: newViewController)
         present(bottomSheet, animated: true, completion: nil)
     }
     
