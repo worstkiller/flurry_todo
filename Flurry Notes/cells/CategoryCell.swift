@@ -13,14 +13,10 @@ import UIKit
 class CategoryCell: UICollectionViewCell {
     
     @IBOutlet weak var titleCategory : UILabel!
+    @IBOutlet weak var catImage : UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureCell()
-    }
-    
-    func configureCell(){
-        
     }
     
 }
