@@ -10,7 +10,7 @@ import UIKit
 import MaterialComponents
 import SnapKit
 
-class CreateTasksViewController: UIViewController {
+class CreateTasksViewController: UIViewController, CategorySelectionProtocol {
 
     var repository = Repository()
     
@@ -87,13 +87,19 @@ class CreateTasksViewController: UIViewController {
     //will get called when create button clicked, save user data here
     @objc func didTapCreate(sender: Any?){
         let errorString = "Sorry something went wrong while saving data"
+        let emptyMsg = "Did you forgot to add something?"
         let successString = "A new task has been created successfully"
         guard let titleText = titleTextField.text else{
             TaskUtilties.showToast(msg: errorString)
             return
         }
         
-        if repository.saveTask(title: titleText, tag: NSCategory.Shopping) {
+        if titleText.isEmpty {
+            TaskUtilties.showToast(msg: emptyMsg)
+            return
+        }
+        
+        if repository.saveTask(title: titleText, tag: NSCategory.getNSCategoryFrom(rawValue: categoryLabel.text ?? NSCategory.All.rawValue)) {
             TaskUtilties.showToast(msg: successString)
         }else{
             TaskUtilties.showToast(msg: errorString)
@@ -105,13 +111,19 @@ class CreateTasksViewController: UIViewController {
         //view controller for categories
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
-
+        newViewController.categorySelectionProtocol = self
         let bottomSheet = MDCBottomSheetController(contentViewController: newViewController)
         present(bottomSheet, animated: true, completion: nil)
     }
     
     @objc func onReminderTap(sender: UITapGestureRecognizer){
         print("Reminder is selected")
+    }
+    
+    func onCategoryClick(categoryResult: CategoryResult){
+        categoryLabel.text = categoryResult.title
+        categoryLabel.textColor = ApplicationScheme.shared.colorScheme.primaryColor
+        print("Category callback received")
     }
     
     override func viewDidLoad() {

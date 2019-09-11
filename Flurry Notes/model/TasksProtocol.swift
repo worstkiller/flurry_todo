@@ -19,3 +19,11 @@ protocol TaskProtocol {
 protocol TaskCellUpdateProtocol {
     func checkBoxUpdated(isChecked: Bool, rowIndex: IndexPath)
 }
+
+protocol CategorySelectionProtocol {
+    func onCategoryClick(categoryResult: CategoryResult)
+}
+
+protocol CategoryCellSelectionProtocol {
+    func onCategoryClick(rowIndex: IndexPath)
+}

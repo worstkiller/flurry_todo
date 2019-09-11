@@ -8,10 +8,12 @@
 
 import UIKit
 
-class CategoryViewController: UICollectionViewController {
+class CategoryViewController: UICollectionViewController, CategoryCellSelectionProtocol {
 
     var repsository = Repository()
     var items: [CategoryResult]?
+    var categorySelectionProtocol: CategorySelectionProtocol?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,8 @@ class CategoryViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         cell.titleCategory.text = items?[indexPath.row].title
         cell.catImage.image = UIImage(named: items?[indexPath.row].image ?? Resources.Images.DOCUMENT)
+        cell.setCellClickListener()
+        cell.setProtocolListener(indexPath: indexPath, categoryProtocol: self)
         return cell
     }
     
@@ -38,6 +42,11 @@ class CategoryViewController: UICollectionViewController {
         let collectionViewSize = collectionView.frame.size.width - padding
         
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+    }
+    
+    func onCategoryClick(rowIndex: IndexPath) {
+        self.dismiss(animated: true, completion: nil)
+        categorySelectionProtocol?.onCategoryClick(categoryResult: (items?[rowIndex.row])!)
     }
 
 }
