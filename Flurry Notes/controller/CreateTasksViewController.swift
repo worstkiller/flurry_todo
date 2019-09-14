@@ -118,6 +118,10 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol {
     
     @objc func onReminderTap(sender: UITapGestureRecognizer){
         print("Reminder is selected")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+        let bottomSheet = MDCBottomSheetController(contentViewController: newViewController)
+        present(bottomSheet, animated: true, completion: nil)
     }
     
     func onCategoryClick(categoryResult: CategoryResult){

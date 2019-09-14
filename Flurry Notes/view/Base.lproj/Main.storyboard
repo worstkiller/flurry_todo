@@ -267,6 +267,35 @@
             </objects>
             <point key="canvasLocation" x="1077" y="-431"/>
         </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="IBy-rm-Wzq">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerViewController" modalPresentationStyle="currentContext" id="3pO-KT-PeU" customClass="DatePickerViewController" customModule="Flurry_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EoZ-C0-o1v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="UE4-wq-9QB">
+                                <rect key="frame" x="0.0" y="44" width="414" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="590143661.435251">
+                                    <!--2019-09-14 08:47:41 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UE4-wq-9QB" firstAttribute="centerX" secondItem="lCm-A6-r91" secondAttribute="centerX" id="0fY-pO-yxY"/>
+                            <constraint firstItem="UE4-wq-9QB" firstAttribute="top" secondItem="lCm-A6-r91" secondAttribute="top" constant="20" id="SaH-2g-aaj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lCm-A6-r91"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="414" height="300"/>
+                    <size key="freeformSize" width="414" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfv-cH-owV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="309"/>
+        </scene>
         <!--Category View Controller-->
         <scene sceneID="nIG-Hk-ZZd">
             <objects>

@@ -18,6 +18,7 @@
 		1D29FBE4231438B100719E3A /* FlurryEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29FBE3231438B100719E3A /* FlurryEntities.swift */; };
 		1D29FBE62314399A00719E3A /* TaskUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29FBE52314399A00719E3A /* TaskUtilities.swift */; };
 		1D391249230C65F600AB6757 /* CreateTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D391248230C65F600AB6757 /* CreateTasksViewController.swift */; };
+		1D4794D0232CE05F0078D495 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4794CF232CE05F0078D495 /* DatePickerViewController.swift */; };
 		1D4CFEF022FEACF200B43B1E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */; };
 		1DA1C14523159BD3006DC66A /* FlurryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1C14423159BD3006DC66A /* FlurryModels.swift */; };
 		1DADB9D22326BAFA009F1CEA /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB9D12326BAFA009F1CEA /* CategoryViewController.swift */; };
@@ -50,6 +51,7 @@
 		1D29FBE3231438B100719E3A /* FlurryEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlurryEntities.swift; sourceTree = "<group>"; };
 		1D29FBE52314399A00719E3A /* TaskUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUtilities.swift; sourceTree = "<group>"; };
 		1D391248230C65F600AB6757 /* CreateTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTasksViewController.swift; sourceTree = "<group>"; };
+		1D4794CF232CE05F0078D495 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		1DA1C14423159BD3006DC66A /* FlurryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlurryModels.swift; sourceTree = "<group>"; };
 		1DADB9D12326BAFA009F1CEA /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				1DE018AB2305787F0062ED46 /* DetailsViewTasksController.swift */,
 				1D391248230C65F600AB6757 /* CreateTasksViewController.swift */,
 				1DADB9D12326BAFA009F1CEA /* CategoryViewController.swift */,
+				1D4794CF232CE05F0078D495 /* DatePickerViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				1D29FBE4231438B100719E3A /* FlurryEntities.swift in Sources */,
 				1D05867522E8D5AA00637894 /* Flurry_Notes.xcdatamodeld in Sources */,
 				1D1B1CFD22F6F5B600B55F62 /* BaseViewController.swift in Sources */,
+				1D4794D0232CE05F0078D495 /* DatePickerViewController.swift in Sources */,
 				1DE018AE23057F980062ED46 /* TasksCell.swift in Sources */,
 				1D391249230C65F600AB6757 /* CreateTasksViewController.swift in Sources */,
 				1D05866F22E8D5AA00637894 /* HomeViewController.swift in Sources */,
