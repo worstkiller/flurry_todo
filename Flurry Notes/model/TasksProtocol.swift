@@ -27,3 +27,7 @@ protocol CategorySelectionProtocol {
 protocol CategoryCellSelectionProtocol {
     func onCategoryClick(rowIndex: IndexPath)
 }
+
+protocol DateSelector {
+    func onDateSelected(dateRaw: Date?)
+}

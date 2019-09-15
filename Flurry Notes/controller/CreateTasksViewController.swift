@@ -10,9 +10,10 @@ import UIKit
 import MaterialComponents
 import SnapKit
 
-class CreateTasksViewController: UIViewController, CategorySelectionProtocol {
+class CreateTasksViewController: UIViewController, CategorySelectionProtocol, DateSelector {
 
     var repository = Repository()
+    var dateSelected: Int64 = TaskUtilties.getDateTime()
     
     //navigation view
     let navigationBar : MDCNavigationBar = {
@@ -99,7 +100,7 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol {
             return
         }
         
-        if repository.saveTask(title: titleText, tag: NSCategory.getNSCategoryFrom(rawValue: categoryLabel.text ?? NSCategory.All.rawValue)) {
+        if repository.saveTask(dateEpoch: dateSelected, title: titleText, tag: NSCategory.getNSCategoryFrom(rawValue: categoryLabel.text ?? NSCategory.All.rawValue)) {
             TaskUtilties.showToast(msg: successString)
         }else{
             TaskUtilties.showToast(msg: errorString)
@@ -120,6 +121,7 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol {
         print("Reminder is selected")
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+        newViewController.datePickerProtocol = self
         let bottomSheet = MDCBottomSheetController(contentViewController: newViewController)
         present(bottomSheet, animated: true, completion: nil)
     }
@@ -128,6 +130,14 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol {
         categoryLabel.text = categoryResult.title
         categoryLabel.textColor = ApplicationScheme.shared.colorScheme.primaryColor
         print("Category callback received")
+    }
+    
+    func onDateSelected(dateRaw: Date?) {
+        guard let date = dateRaw?.timeIntervalSince1970 else {
+            return
+        }
+        alarmLabel.text = try? TaskUtilties.getFormattedDate(dateTime: Int64(date))
+        alarmLabel.textColor = ApplicationScheme.shared.colorScheme.primaryColor
     }
     
     override func viewDidLoad() {

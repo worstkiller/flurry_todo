@@ -280,17 +280,29 @@
                                 <date key="date" timeIntervalSinceReferenceDate="590143661.435251">
                                     <!--2019-09-14 08:47:41 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="3pO-KT-PeU" eventType="valueChanged" id="53o-Sz-Pmz"/>
+                                </connections>
                             </datePicker>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="Szu-ib-5xW">
+                                <rect key="frame" x="382" y="16" width="12" height="12"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UE4-wq-9QB" firstAttribute="centerX" secondItem="lCm-A6-r91" secondAttribute="centerX" id="0fY-pO-yxY"/>
+                            <constraint firstItem="lCm-A6-r91" firstAttribute="trailing" secondItem="Szu-ib-5xW" secondAttribute="trailing" constant="20" id="SRa-Z8-21B"/>
                             <constraint firstItem="UE4-wq-9QB" firstAttribute="top" secondItem="lCm-A6-r91" secondAttribute="top" constant="20" id="SaH-2g-aaj"/>
+                            <constraint firstItem="lCm-A6-r91" firstAttribute="top" secondItem="Szu-ib-5xW" secondAttribute="top" constant="28" id="euj-HN-adg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lCm-A6-r91"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="300"/>
                     <size key="freeformSize" width="414" height="300"/>
+                    <connections>
+                        <outlet property="datePicker" destination="UE4-wq-9QB" id="SIj-OY-wPa"/>
+                        <outlet property="imageClose" destination="Szu-ib-5xW" id="RoB-et-tJk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfv-cH-owV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -364,6 +376,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="23" height="23"/>
         <image name="document" width="192" height="192"/>
     </resources>
 </document>
