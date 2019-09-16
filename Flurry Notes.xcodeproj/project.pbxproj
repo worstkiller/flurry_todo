@@ -17,6 +17,7 @@
 		1D29FBE2231430A000719E3A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29FBE1231430A000719E3A /* Repository.swift */; };
 		1D29FBE4231438B100719E3A /* FlurryEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29FBE3231438B100719E3A /* FlurryEntities.swift */; };
 		1D29FBE62314399A00719E3A /* TaskUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29FBE52314399A00719E3A /* TaskUtilities.swift */; };
+		1D362FDE232FF1D500BD1A7E /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D362FDD232FF1D500BD1A7E /* AlarmManager.swift */; };
 		1D391249230C65F600AB6757 /* CreateTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D391248230C65F600AB6757 /* CreateTasksViewController.swift */; };
 		1D4794D0232CE05F0078D495 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4794CF232CE05F0078D495 /* DatePickerViewController.swift */; };
 		1D4CFEF022FEACF200B43B1E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */; };
@@ -50,6 +51,7 @@
 		1D29FBE1231430A000719E3A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		1D29FBE3231438B100719E3A /* FlurryEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlurryEntities.swift; sourceTree = "<group>"; };
 		1D29FBE52314399A00719E3A /* TaskUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUtilities.swift; sourceTree = "<group>"; };
+		1D362FDD232FF1D500BD1A7E /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		1D391248230C65F600AB6757 /* CreateTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTasksViewController.swift; sourceTree = "<group>"; };
 		1D4794CF232CE05F0078D495 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		1D4CFEEF22FEACF200B43B1E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				1DA1C14423159BD3006DC66A /* FlurryModels.swift */,
 				1DB1B5DC231A8DD100330809 /* TasksProtocol.swift */,
 				1DB1B5DE231AECFE00330809 /* TasksHeaderModel.swift */,
+				1D362FDD232FF1D500BD1A7E /* AlarmManager.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D362FDE232FF1D500BD1A7E /* AlarmManager.swift in Sources */,
 				1DADB9D22326BAFA009F1CEA /* CategoryViewController.swift in Sources */,
 				1D29FBE4231438B100719E3A /* FlurryEntities.swift in Sources */,
 				1D05867522E8D5AA00637894 /* Flurry_Notes.xcdatamodeld in Sources */,

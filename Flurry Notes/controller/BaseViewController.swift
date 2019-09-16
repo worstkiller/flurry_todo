@@ -9,8 +9,9 @@
 import UIKit
 import MaterialComponents
 import SnapKit
+import UserNotifications
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     var repository = Repository()
     
@@ -32,10 +33,29 @@ class BaseViewController: UIViewController {
         
         //adding views to parent
          assembleViews(button)
+        
+        //show notifications and alaram permissions
+        askForPermissions()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         checkIfTasksAreEmpty()
+    }
+    
+    private func askForPermissions(){
+        //notifications permissions
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) {(granted, _) in
+            if granted{
+                print("User Granted Notifications")
+            } else {
+                print("User denied notifications")
+            }
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
     }
     
     private func checkIfTasksAreEmpty(){
