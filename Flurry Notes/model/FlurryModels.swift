@@ -16,6 +16,18 @@ struct TaskResult {
     var date: Int64
     var image: String
     var isCompleted: Bool
+    
+    //factory method to get a instance of the taska result
+    static func getInstance(title: String, category: String, date: Int64) -> TaskResult{
+        return TaskResult(id: TaskUtilties.generateTransactionId(), title: title, category: category, date: date, image: Resources.getImageForCategory(type: NSCategory.getNSCategoryFrom(rawValue: category)), isCompleted: false)
+    }
+    
+}
+
+extension TaskResult: Equatable {
+    static func == (lhs: TaskResult, rhs: TaskResult) -> Bool {
+        return lhs.date == rhs.date && lhs.id == rhs.id && lhs.isCompleted == rhs.isCompleted && lhs.title == rhs.title && lhs.category == rhs.category && lhs.image  == rhs.image
+    }
 }
 
 struct CategoryResult {

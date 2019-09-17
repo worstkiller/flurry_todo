@@ -20,15 +20,15 @@ struct Repository {
     }()
     
     //call this to save the task object
-    mutating func  saveTask(dateEpoch: Int64,title: String, tag: NSCategory) -> Bool{
+    mutating func  saveTask(taskResult: TaskResult) -> Bool{
         let entity = NSEntityDescription.entity(forEntityName: TASK_ENTITY, in: coreDataContext)
         let newTask = NSManagedObject(entity: entity!, insertInto: coreDataContext)
-        newTask.setValue(title, forKey: NSTaskEntity.TITLTE)
-        newTask.setValue(tag.rawValue, forKey: NSTaskEntity.CATEGORY)
-        newTask.setValue(dateEpoch, forKey: NSTaskEntity.DATE)
-        newTask.setValue(TaskUtilties.generateTransactionId(), forKey: NSTaskEntity.ID)
-        newTask.setValue(false, forKey: NSTaskEntity.IS_COMPLETED)
-        newTask.setValue(Resources.getImageForCategory(type: tag), forKey: NSTaskEntity.IMAGE)
+        newTask.setValue(taskResult.title, forKey: NSTaskEntity.TITLTE)
+        newTask.setValue(taskResult.category, forKey: NSTaskEntity.CATEGORY)
+        newTask.setValue(taskResult.date, forKey: NSTaskEntity.DATE)
+        newTask.setValue(taskResult.id, forKey: NSTaskEntity.ID)
+        newTask.setValue(taskResult.isCompleted, forKey: NSTaskEntity.IS_COMPLETED)
+        newTask.setValue(taskResult.image, forKey: NSTaskEntity.IMAGE)
         
         do {
             try coreDataContext.save()

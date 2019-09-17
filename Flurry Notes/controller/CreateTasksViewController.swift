@@ -100,8 +100,12 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
             return
         }
         
-        if repository.saveTask(dateEpoch: dateSelected, title: titleText, tag: NSCategory.getNSCategoryFrom(rawValue: categoryLabel.text ?? NSCategory.All.rawValue)) {
+        let taskResult = TaskResult.getInstance(title: titleText, category: categoryLabel.text ?? NSCategory.All.rawValue, date: dateSelected)
+        
+        if repository.saveTask(taskResult: taskResult) {
             TaskUtilties.showToast(msg: successString)
+            AlarmManager.sharedInstance.addAlarm(taskResult: taskResult)
+            self.navigationController?.popViewController(animated: true)
         }else{
             TaskUtilties.showToast(msg: errorString)
         }
