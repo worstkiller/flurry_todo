@@ -31,7 +31,6 @@
 		1DB3D28922F9F2DE0048DC12 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28622F9F2DE0048DC12 /* Rubik-Regular.ttf */; };
 		1DB3D28A22F9F2DE0048DC12 /* Rubik-OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3D28722F9F2DE0048DC12 /* Rubik-OFL.txt */; };
 		1DB8CD3722F9E36600D50270 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8CD3622F9E36600D50270 /* ProductCell.swift */; };
-		1DB8CD3922F9E3EC00D50270 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8CD3822F9E3EC00D50270 /* Catalog.swift */; };
 		1DCD0708231290DF00C50838 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD0707231290DF00C50838 /* Resources.swift */; };
 		1DE018AC2305787F0062ED46 /* DetailsViewTasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE018AB2305787F0062ED46 /* DetailsViewTasksController.swift */; };
 		1DE018AE23057F980062ED46 /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE018AD23057F980062ED46 /* TasksCell.swift */; };
@@ -65,7 +64,6 @@
 		1DB3D28622F9F2DE0048DC12 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		1DB3D28722F9F2DE0048DC12 /* Rubik-OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Rubik-OFL.txt"; sourceTree = "<group>"; };
 		1DB8CD3622F9E36600D50270 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		1DB8CD3822F9E3EC00D50270 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		1DCD0707231290DF00C50838 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		1DE018AB2305787F0062ED46 /* DetailsViewTasksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewTasksController.swift; sourceTree = "<group>"; };
 		1DE018AD23057F980062ED46 /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 		1D1B1CFB22F6F53700B55F62 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				1DB8CD3822F9E3EC00D50270 /* Catalog.swift */,
 				1DCD0707231290DF00C50838 /* Resources.swift */,
 				1D29FBE1231430A000719E3A /* Repository.swift */,
 				1D29FBE3231438B100719E3A /* FlurryEntities.swift */,
@@ -331,7 +328,6 @@
 				1D4CFEF022FEACF200B43B1E /* DetailsViewController.swift in Sources */,
 				1DB8CD3722F9E36600D50270 /* ProductCell.swift in Sources */,
 				1D29FBE2231430A000719E3A /* Repository.swift in Sources */,
-				1DB8CD3922F9E3EC00D50270 /* Catalog.swift in Sources */,
 				1DB1B5DF231AECFE00330809 /* TasksHeaderModel.swift in Sources */,
 				1DF3829F230960AE00D4E380 /* TasksHeaderCell.swift in Sources */,
 				1DFFE2D822F8AB5F00C337F7 /* ApplicationScheme.swift in Sources */,

@@ -94,9 +94,19 @@ struct TaskUtilties {
         return dateFormatterGet.string(from: date)
     }
     
+    /*get back date in format EEEE
+     ex MONDAY
+     */
+    static func getFormattedDay(dateTime: Int64)throws ->String {
+        let date = Date(timeIntervalSince1970: TimeInterval(dateTime))
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "EEEE"
+        return dateFormatterGet.string(from: date)
+    }
+    
     //get a date object from epoch Int64
     static func getDateFromEpoch(epoch: Int64)->Date{
-        return Date(timeIntervalSince1970: TimeInterval(epoch/1000))
+        return Date(timeIntervalSince1970: TimeInterval(epoch))
     }
     
 }

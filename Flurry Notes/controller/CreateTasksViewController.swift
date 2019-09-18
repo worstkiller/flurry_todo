@@ -13,7 +13,7 @@ import SnapKit
 class CreateTasksViewController: UIViewController, CategorySelectionProtocol, DateSelector {
 
     var repository = Repository()
-    var dateSelected: Int64 = TaskUtilties.getDateTime()
+    var dateSelected = Date()
     
     //navigation view
     let navigationBar : MDCNavigationBar = {
@@ -100,12 +100,12 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
             return
         }
         
-        let taskResult = TaskResult.getInstance(title: titleText, category: categoryLabel.text ?? NSCategory.All.rawValue, date: dateSelected)
+        let taskResult = TaskResult.getInstance(title: titleText, category: categoryLabel.text ?? NSCategory.All.rawValue, date: Int64(dateSelected.timeIntervalSince1970))
         
         if repository.saveTask(taskResult: taskResult) {
             TaskUtilties.showToast(msg: successString)
             AlarmManager.sharedInstance.addAlarm(taskResult: taskResult)
-            self.navigationController?.popViewController(animated: true)
+           // dismiss(animated: true, completion: nil)
         }else{
             TaskUtilties.showToast(msg: errorString)
         }
@@ -142,6 +142,7 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
         }
         alarmLabel.text = try? TaskUtilties.getFormattedDate(dateTime: Int64(date))
         alarmLabel.textColor = ApplicationScheme.shared.colorScheme.primaryColor
+        dateSelected = dateRaw!
     }
     
     override func viewDidLoad() {
