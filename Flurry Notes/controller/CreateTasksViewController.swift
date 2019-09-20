@@ -103,12 +103,25 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
         let taskResult = TaskResult.getInstance(title: titleText, category: categoryLabel.text ?? NSCategory.All.rawValue, date: Int64(dateSelected.timeIntervalSince1970))
         
         if repository.saveTask(taskResult: taskResult) {
-            TaskUtilties.showToast(msg: successString)
+            showSuccessDialog()
             AlarmManager.sharedInstance.addAlarm(taskResult: taskResult)
            // dismiss(animated: true, completion: nil)
         }else{
             TaskUtilties.showToast(msg: errorString)
         }
+    }
+    
+    private func showSuccessDialog(){
+        let alertController = MDCAlertController(title: "Mission Alert", message: "Your mission secured successfully")
+        let addAnother = MDCAlertAction(title: "Add more", handler: {(action) in
+            alertController.dismiss(animated: true, completion: nil)
+        })
+        let action = MDCAlertAction(title: "Dismiss", handler: {(action) in
+            self.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(action)
+        alertController.addAction(addAnother)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @objc func onCategoryTap(sender: UITapGestureRecognizer){

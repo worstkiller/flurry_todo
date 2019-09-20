@@ -58,6 +58,30 @@ class BaseViewController: UIViewController, UNUserNotificationCenterDelegate {
         completionHandler([.alert, .sound])
     }
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("Received the notification callback id = \(response.notification.request.identifier)")
+        openTaskCompletionDialog(id: response.notification.request.identifier)
+    }
+    
+    private func openTaskCompletionDialog(id: String){
+        guard var taskData = repository.getSingleTaskWithId(id: id) else {return}
+        let title = try! "Your \(TaskUtilties.getFormattedDay(dateTime: taskData.date))'s mission is ready"
+        let alertController = MDCAlertController(title: title, message: taskData.title)
+        let actionDone = MDCAlertAction(title: "Done") {(action) in
+            print("alert done dialog clicked")
+            taskData.isCompleted = true
+            self.repository.updateTaskFor(taskResult: taskData)
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        let actionDismiss = MDCAlertAction(title: "Dismiss") {(action) in
+            print("alert dismiss dialog clicked")
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(actionDone)
+        alertController.addAction(actionDismiss)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     private func checkIfTasksAreEmpty(){
         if !repository.hasTaskItems() {
             self.view.addSubview(errorView)

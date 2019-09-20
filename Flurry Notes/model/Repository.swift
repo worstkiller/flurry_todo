@@ -183,6 +183,29 @@ struct Repository {
         return tempResult
     }
     
+    //get a single task based on id passed
+    mutating func getSingleTaskWithId(id: String) -> TaskResult? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: TASK_ENTITY)
+        fetchRequest.predicate = NSPredicate(format: "\(NSTaskEntity.ID) == %@", id)
+        do{
+            let data = try coreDataContext.fetch(fetchRequest)
+            let singleObj = data[0] as! NSManagedObject
+            
+            let title = singleObj.value(forKey: NSTaskEntity.TITLTE) as! String
+            let id = singleObj.value(forKey: NSTaskEntity.ID) as! String
+            let image = singleObj.value(forKey: NSTaskEntity.IMAGE) as! String
+            let category = singleObj.value(forKey: NSTaskEntity.CATEGORY) as! String
+            let isCompleted = singleObj.value(forKey: NSTaskEntity.IS_COMPLETED) as! Bool
+            let date = singleObj.value(forKey: NSTaskEntity.DATE) as! Int64
+            
+            return TaskResult(id: id, title: title, category: category, date: date, image: image, isCompleted: isCompleted)
+            
+        }catch let error{
+            print(error)
+        }
+        return nil
+    }
+    
     //update task for category
     mutating func updateTaskFor(taskResult : TaskResult) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: TASK_ENTITY)
