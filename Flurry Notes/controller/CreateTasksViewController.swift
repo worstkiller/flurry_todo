@@ -89,7 +89,6 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
     @objc func didTapCreate(sender: Any?){
         let errorString = "Sorry something went wrong while saving data"
         let emptyMsg = "Did you forgot to add something?"
-        let successString = "A new task has been created successfully"
         guard let titleText = titleTextField.text else{
             TaskUtilties.showToast(msg: errorString)
             return
@@ -115,6 +114,7 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
         let alertController = MDCAlertController(title: "Mission Alert", message: "Your mission secured successfully")
         let addAnother = MDCAlertAction(title: "Add more", handler: {(action) in
             alertController.dismiss(animated: true, completion: nil)
+            self.clearToDefaults()
         })
         let action = MDCAlertAction(title: "Dismiss", handler: {(action) in
             self.dismiss(animated: true, completion: nil)
@@ -122,6 +122,15 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
         alertController.addAction(action)
         alertController.addAction(addAnother)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func clearToDefaults(){
+        titleTextField.clearText()
+        categoryLabel.textColor = .black
+        alarmLabel.textColor = .black
+        dateSelected = Date()
+        alarmLabel.text = "Select reminder"
+        categoryLabel.text = "Choose category"
     }
     
     @objc func onCategoryTap(sender: UITapGestureRecognizer){
