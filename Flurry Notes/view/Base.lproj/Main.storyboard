@@ -188,13 +188,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="210" height="219"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQH-lj-OqZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="All" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JQH-lj-OqZ">
                                             <rect key="frame" x="20" y="142" width="194" height="36"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="249" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" image="document" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gol-am-Feg">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="249" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" image="document" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gol-am-Feg">
                                             <rect key="frame" x="20" y="20" width="40" height="40"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="23 Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMZ-eO-eMr">
@@ -212,8 +212,9 @@
                                     <constraint firstItem="jMZ-eO-eMr" firstAttribute="top" secondItem="JQH-lj-OqZ" secondAttribute="bottom" id="Jn5-6X-OZ3"/>
                                     <constraint firstAttribute="trailing" secondItem="jMZ-eO-eMr" secondAttribute="trailing" constant="16" id="MMm-vk-qr6"/>
                                     <constraint firstItem="Gol-am-Feg" firstAttribute="leading" secondItem="Yuw-hU-hyp" secondAttribute="leading" constant="16" id="SXN-bJ-f5M"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gol-am-Feg" secondAttribute="trailing" priority="750" constant="130" id="WWQ-Xo-wFh"/>
-                                    <constraint firstItem="JQH-lj-OqZ" firstAttribute="top" secondItem="Gol-am-Feg" secondAttribute="bottom" constant="50" id="a7F-aa-eEq"/>
+                                    <constraint firstItem="Gol-am-Feg" firstAttribute="width" secondItem="Yuw-hU-hyp" secondAttribute="height" multiplier="40:219" id="XOH-Nw-1nz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gol-am-Feg" secondAttribute="trailing" constant="150" id="a4c-aK-Ktg"/>
+                                    <constraint firstItem="JQH-lj-OqZ" firstAttribute="top" secondItem="Gol-am-Feg" secondAttribute="bottom" constant="20" id="a7F-aa-eEq"/>
                                     <constraint firstItem="jMZ-eO-eMr" firstAttribute="centerX" secondItem="Yuw-hU-hyp" secondAttribute="centerX" id="bhr-ah-DwW"/>
                                     <constraint firstItem="Gol-am-Feg" firstAttribute="top" secondItem="Yuw-hU-hyp" secondAttribute="top" constant="25" id="h2V-AP-cAy"/>
                                     <constraint firstItem="JQH-lj-OqZ" firstAttribute="leading" secondItem="Yuw-hU-hyp" secondAttribute="leading" constant="20" id="lbF-d4-LOD"/>
@@ -285,15 +286,17 @@
                                 </connections>
                             </datePicker>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="Szu-ib-5xW">
-                                <rect key="frame" x="382" y="16" width="12" height="12"/>
+                                <rect key="frame" x="380" y="32" width="12" height="12"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UE4-wq-9QB" firstAttribute="centerX" secondItem="lCm-A6-r91" secondAttribute="centerX" id="0fY-pO-yxY"/>
-                            <constraint firstItem="lCm-A6-r91" firstAttribute="trailing" secondItem="Szu-ib-5xW" secondAttribute="trailing" constant="20" id="SRa-Z8-21B"/>
+                            <constraint firstItem="lCm-A6-r91" firstAttribute="bottom" secondItem="UE4-wq-9QB" secondAttribute="bottom" constant="6" id="GKM-FH-UXa"/>
                             <constraint firstItem="UE4-wq-9QB" firstAttribute="top" secondItem="lCm-A6-r91" secondAttribute="top" constant="20" id="SaH-2g-aaj"/>
-                            <constraint firstItem="lCm-A6-r91" firstAttribute="top" secondItem="Szu-ib-5xW" secondAttribute="top" constant="28" id="euj-HN-adg"/>
+                            <constraint firstItem="lCm-A6-r91" firstAttribute="trailing" secondItem="Szu-ib-5xW" secondAttribute="trailing" constant="20" id="Ttc-FJ-iTg"/>
+                            <constraint firstItem="lCm-A6-r91" firstAttribute="top" secondItem="Szu-ib-5xW" secondAttribute="top" id="XEp-Li-W99"/>
+                            <constraint firstItem="UE4-wq-9QB" firstAttribute="centerY" secondItem="lCm-A6-r91" secondAttribute="centerY" id="c3u-OC-wTk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lCm-A6-r91"/>
                     </view>
