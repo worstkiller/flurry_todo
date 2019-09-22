@@ -10,7 +10,7 @@ import UIKit
 import MaterialComponents
 import SnapKit
 
-class CreateTasksViewController: UIViewController, CategorySelectionProtocol, DateSelector {
+class CreateTasksViewController: UIViewController, CategorySelectionProtocol, DateSelector, UITextFieldDelegate {
 
     var repository = Repository()
     var dateSelected = Date()
@@ -39,14 +39,20 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
         return headerTitle
     }()
     
-    let titleTextField: MDCMultilineTextField = {
-        let usernameTextField = MDCMultilineTextField()
+    let titleTextField: UITextField = {
+        let usernameTextField = UITextField()
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         usernameTextField.clearButtonMode = .unlessEditing;
-        usernameTextField.minimumLines = 8
         usernameTextField.becomeFirstResponder()
         return usernameTextField
     }()
+    
+    let divider : UIView = {
+        let uiView = UIView()
+        uiView.backgroundColor = UIColor(displayP3Red: 167/255, green: 171/255, blue: 178/255, alpha: 1.0)
+        return uiView
+    }()
+    
     
     let alarmImage : UIImageView = {
         let image = UIImage(named: "alarm")
@@ -126,7 +132,7 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
     }
     
     private func clearToDefaults(){
-        titleTextField.clearText()
+        titleTextField.text = ""
         categoryLabel.textColor = .black
         alarmLabel.textColor = .black
         dateSelected = Date()
@@ -173,6 +179,13 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
         // Do any additional setup after loading the view.
         assembleViews()
         addClickListener()
+        //text delegation for keyboard return
+         self.titleTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func addClickListener(){
@@ -204,7 +217,7 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
         
         self.view.addSubview(titleTextField)
         self.titleTextField.snp.makeConstraints{make-> Void in
-            make.top.equalTo(self.headerLabel.snp.bottom)
+            make.top.equalTo(self.headerLabel.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(40)
             make.width.equalTo(330)
             make.rightMargin.equalTo(40)
@@ -212,17 +225,26 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
             make.height.lessThanOrEqualTo(400)
         }
         
+        self.view.addSubview(divider)
+        self.divider.snp.makeConstraints{make-> Void in
+            make.top.equalTo(self.titleTextField.snp.bottom).offset(140)
+            make.left.equalTo(40)
+            make.right.equalTo(-40)
+            make.height.equalTo(2)
+            make.width.equalTo(330)
+        }
+        
         self.view.addSubview(alarmImage)
         self.alarmImage.snp.makeConstraints{make -> Void in
             make.width.equalTo(24)
             make.height.equalTo(24)
             make.left.equalToSuperview().offset(40)
-            make.top.equalTo(self.titleTextField.snp.bottom).offset(40)
+            make.top.equalTo(self.divider.snp.bottom).offset(40)
         }
         
         self.view.addSubview(alarmLabel)
         self.alarmLabel.snp.makeConstraints{make -> Void in
-            make.top.equalTo(self.titleTextField.snp.bottom).offset(40)
+            make.top.equalTo(self.divider.snp.bottom).offset(40)
             make.left.equalTo(self.alarmImage.snp.left).offset(40)
             make.right.equalToSuperview()
         }
