@@ -44,6 +44,7 @@ class CreateTasksViewController: UIViewController, CategorySelectionProtocol, Da
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         usernameTextField.clearButtonMode = .unlessEditing;
         usernameTextField.minimumLines = 8
+        usernameTextField.becomeFirstResponder()
         return usernameTextField
     }()
     

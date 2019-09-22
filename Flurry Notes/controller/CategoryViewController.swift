@@ -22,6 +22,27 @@ class CategoryViewController: UICollectionViewController, CategoryCellSelectionP
         
         //data loading
         items = repsository.getAllCategory()
+        
+        //Define Layout here
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        //Get device width
+        let width = UIScreen.main.bounds.width
+        
+        //set section inset as per your requirement.
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        //set cell item size here
+        layout.itemSize = CGSize(width: (width / 2)-8, height: 60)
+        
+        //set Minimum spacing between 2 items
+        layout.minimumInteritemSpacing = 8
+        
+        //set minimum vertical line spacing here between two lines in collectionview
+        layout.minimumLineSpacing = 8
+        
+        //apply defined layout to collectionview
+        collectionView!.collectionViewLayout = layout
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,12 +58,12 @@ class CategoryViewController: UICollectionViewController, CategoryCellSelectionP
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding: CGFloat =  50
-        let collectionViewSize = collectionView.frame.size.width - padding
-        
-        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let padding: CGFloat =  50
+//        let collectionViewSize = collectionView.frame.size.width - padding
+//
+//        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+//    }
     
     func onCategoryClick(rowIndex: IndexPath) {
         self.dismiss(animated: true, completion: nil)

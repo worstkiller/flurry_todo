@@ -15,6 +15,28 @@ class DetailsViewTasksController: UICollectionViewController, TaskCellUpdateProt
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Define Layout here
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        //Get device width
+        let width = UIScreen.main.bounds.width
+        
+        //set section inset as per your requirement.
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        
+        //set cell item size here
+        layout.itemSize = CGSize(width: width-16, height: 80)
+        
+        //set Minimum spacing between 2 items
+        layout.minimumInteritemSpacing = 16
+        
+        //set minimum vertical line spacing here between two lines in collectionview
+        layout.minimumLineSpacing = 20
+        
+        //apply defined layout to collectionview
+        collectionView!.collectionViewLayout = layout
+        
         initViews()
     }
     

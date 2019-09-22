@@ -295,7 +295,7 @@
                             <constraint firstItem="lCm-A6-r91" firstAttribute="bottom" secondItem="UE4-wq-9QB" secondAttribute="bottom" constant="6" id="GKM-FH-UXa"/>
                             <constraint firstItem="UE4-wq-9QB" firstAttribute="top" secondItem="lCm-A6-r91" secondAttribute="top" constant="20" id="SaH-2g-aaj"/>
                             <constraint firstItem="lCm-A6-r91" firstAttribute="trailing" secondItem="Szu-ib-5xW" secondAttribute="trailing" constant="20" id="Ttc-FJ-iTg"/>
-                            <constraint firstItem="lCm-A6-r91" firstAttribute="top" secondItem="Szu-ib-5xW" secondAttribute="top" id="XEp-Li-W99"/>
+                            <constraint firstItem="lCm-A6-r91" firstAttribute="top" secondItem="Szu-ib-5xW" secondAttribute="top" constant="10" id="XEp-Li-W99"/>
                             <constraint firstItem="UE4-wq-9QB" firstAttribute="centerY" secondItem="lCm-A6-r91" secondAttribute="centerY" id="c3u-OC-wTk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lCm-A6-r91"/>
