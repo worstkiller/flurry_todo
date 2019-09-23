@@ -92,8 +92,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Max" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kue-RR-HVt">
-                                            <rect key="frame" x="40" y="10" width="88" height="27.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Call Max and his father for paying tax" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kue-RR-HVt">
+                                            <rect key="frame" x="40" y="10" width="276" height="28"/>
                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="23"/>
                                             <color key="textColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -120,6 +120,7 @@
                                 </view>
                                 <constraints>
                                     <constraint firstItem="9H2-8R-phL" firstAttribute="top" secondItem="kue-RR-HVt" secondAttribute="bottom" constant="8" id="4sz-1n-c9T"/>
+                                    <constraint firstAttribute="trailing" secondItem="kue-RR-HVt" secondAttribute="trailing" constant="98" id="6fd-n8-Q6F"/>
                                     <constraint firstItem="9H2-8R-phL" firstAttribute="leading" secondItem="CNb-jf-ifr" secondAttribute="leading" constant="40" id="EHO-Z7-0CN"/>
                                     <constraint firstAttribute="trailing" secondItem="4ju-y9-IjA" secondAttribute="trailing" constant="40" id="GNE-qu-AOV"/>
                                     <constraint firstItem="kue-RR-HVt" firstAttribute="top" secondItem="CNb-jf-ifr" secondAttribute="top" constant="10" id="UwD-Hp-HMR"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MaterialComponents
 
 class DetailsViewTasksController: UICollectionViewController, TaskCellUpdateProtocol{
     var categoryResult: CategoryResult?
@@ -26,14 +27,10 @@ class DetailsViewTasksController: UICollectionViewController, TaskCellUpdateProt
         layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         
         //set cell item size here
-        layout.itemSize = CGSize(width: width-16, height: 80)
+        layout.itemSize = CGSize(width: width, height: 80)
         
-        //set Minimum spacing between 2 items
-        layout.minimumInteritemSpacing = 16
-        
-        //set minimum vertical line spacing here between two lines in collectionview
-        layout.minimumLineSpacing = 20
-        
+        layout.headerReferenceSize = CGSize(width: width-16, height: 50)
+    
         //apply defined layout to collectionview
         collectionView!.collectionViewLayout = layout
         
@@ -83,6 +80,16 @@ class DetailsViewTasksController: UICollectionViewController, TaskCellUpdateProt
             return sectionHeader
         }
         return UICollectionReusableView()
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let data = repository.getSingleTaskWithId(id: itemsMappedToHeader[indexPath.section].getTaskResults()[indexPath.row].id)!
+        let dialog = MDCAlertController(title: "Mission Details", message: data.title)
+        let action = MDCAlertAction(title: "Dismiss"){action -> Void in
+            dialog.dismiss(animated: true, completion: nil)
+        }
+        dialog.addAction(action)
+        self.present(dialog, animated: true, completion: nil)
     }
     
     private func getSortedItemsForCategory(category: NSCategory){
